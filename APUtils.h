@@ -3,10 +3,10 @@
 //
 //  Created by Andrei Puni on 4/18/13.
 //
-
-#import "NSString+Utils.h"
-#import "NSArray+Utils.h"
-#import "NSDictionary+Utils.h"
+ 
+#import "NSString+APUtils.h"
+#import "NSArray+APUtils.h"
+#import "NSDictionary+APUtils.h"
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
