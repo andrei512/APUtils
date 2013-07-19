@@ -1,12 +1,10 @@
 //
-//  NSObject+Phoenix.m
-//  Clomp
+//  NSObject+APUtils.m
 //
 //  Created by Andrei on 8/11/12.
-//  Copyright (c) 2012 Whatevra. All rights reserved.
 //
 
-#import "NSObject+Model.h"
+#import "NSObject+APUtils.h"
 #import "MARTNSObject.h"
 #import "RTProperty.h"
 #import "APUtils.h"
