@@ -18,4 +18,18 @@
 
 - (NSString *)className;
 
+- (NSString *)hashKey;
+
+- (Class)classByRemovingSuffix:(NSString *)suffix;
++ (Class)classByRemovingSuffix:(NSString *)suffix;
+
+- (Class)classByReplacingSuffix:(NSString *)suffix with:(NSString *)replacement;
++ (Class)classByReplacingSuffix:(NSString *)suffix with:(NSString *)replacement;
+
+- (Class)classByAddingSuffix:(NSString *)suffix;
++ (Class)classByAddingSuffix:(NSString *)suffix;
+
+
 @end
+
+
