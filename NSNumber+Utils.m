@@ -24,7 +24,7 @@
     static NSNumberFormatter *formatter = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
-        [formatter setCurrencyCode:ifXnilY(currency, @"USD")];
+        [formatter setCurrencyCode:currency ?: @"USD"];
         [formatter setGroupingSeparator:@","];
         [formatter setDecimalSeparator:@"."];
         [formatter setMaximumFractionDigits:0];
