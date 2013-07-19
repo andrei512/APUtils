@@ -1,5 +1,5 @@
 //
-//  UIDevice+Utils.h
+//  UIDevice+APUtils.h
 //
 //  Created by Andrei Puni on 6/27/13.
 //

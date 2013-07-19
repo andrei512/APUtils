@@ -1,10 +1,10 @@
 //
-//  NSDictionary+Utils.m
+//  NSDictionary+APUtils.m
 //
 //  Created by Andrei Puni on 5/6/13.
 //
 
-#import "NSDictionary+Utils.h"
+#import "NSDictionary+APUtils.h"
 
 @implementation NSDictionary (Utils)
 

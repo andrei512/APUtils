@@ -1,10 +1,10 @@
 //
-//  UIImage+Utils.m
+//  UIImage+APUtils.m
 //
 //  Created by Andrei Puni on 6/3/13.
 //
 
-#import "UIImage+Utils.h"
+#import "UIImage+APUtils.h"
 
 @implementation UIImage (Utils)
 

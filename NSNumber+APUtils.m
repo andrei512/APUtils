@@ -1,10 +1,10 @@
 //
-//  NSNumber+Utils.m
+//  NSNumber+APUtils.m
 //
 //  Created by Andrei Puni on 5/29/13.
 //
 
-#import "NSNumber+Utils.h"
+#import "NSNumber+APUtils.h"
 
 @implementation NSNumber (Utils)
 

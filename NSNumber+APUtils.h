@@ -1,5 +1,5 @@
 //
-//  NSNumber+Utils.h
+//  NSNumber+APUtils.h
 //
 //  Created by Andrei Puni on 5/29/13.
 //

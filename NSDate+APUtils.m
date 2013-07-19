@@ -1,10 +1,10 @@
 //
-//  NSDate+Utils.m
+//  NSDate+APUtils.m
 //
 //  Created by Andrei Puni on 5/21/13.
 //
 
-#import "NSDate+Utils.h"
+#import "NSDate+APUtils.h"
 
 @implementation NSDate (Utils)
 

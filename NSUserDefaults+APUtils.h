@@ -1,5 +1,5 @@
 //
-//  NSUserDefaults+Utils.h
+//  NSUserDefaults+APUtils.h
 //
 //  Created by Andrei Puni on 7/9/13.
 //

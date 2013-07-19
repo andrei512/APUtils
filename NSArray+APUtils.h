@@ -1,5 +1,5 @@
 //
-//  NSArray+Utils.h
+//  NSArray+APUtils.h
 //
 //  Created by Andrei Puni on 4/29/13.
 //

@@ -1,5 +1,5 @@
 //
-//  UIImage+Utils.h
+//  UIImage+APUtils.h
 //
 //  Created by Andrei Puni on 6/3/13.
 //

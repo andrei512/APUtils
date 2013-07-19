@@ -1,10 +1,10 @@
 //
-//  NSUserDefaults+Utils.m
+//  NSUserDefaults+APUtils.m
 //
 //  Created by Andrei Puni on 7/9/13.
 //
 
-#import "NSUserDefaults+Utils.h"
+#import "NSUserDefaults+APUtils.h"
 
 @implementation NSUserDefaults (Utils)
 

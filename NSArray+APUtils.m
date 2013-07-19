@@ -1,10 +1,10 @@
 //
-//  NSArray+Utils.m
+//  NSArray+APUtils.m
 //
 //  Created by Andrei Puni on 4/29/13.
 //
 
-#import "NSArray+Utils.h"
+#import "NSArray+APUtils.h"
 
 @implementation NSArray (Utils)
 

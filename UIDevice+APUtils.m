@@ -1,11 +1,11 @@
 //
-//  UIDevice+Utils.m
+//  UIDevice+APUtils.m
 //
 //  Created by Andrei Puni on 6/27/13.
 //
 
-#import "UIDevice+Utils.h"
-#import "NSString+Utils.h"
+#import "UIDevice+APUtils.h"
+#import "NSString+APUtils.h"
 
 @implementation UIDevice (Utils)
 

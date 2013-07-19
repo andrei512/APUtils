@@ -1,5 +1,5 @@
 //
-//  NSDictionary+Utils.h
+//  NSDictionary+APUtils.h
 //
 //  Created by Andrei Puni on 5/6/13.
 //

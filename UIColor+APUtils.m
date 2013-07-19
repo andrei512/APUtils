@@ -1,10 +1,10 @@
 //
-//  UIColor+Utils.m
+//  UIColor+APUtils.m
 //
 //  Created by Andrei Puni on 4/24/13.
 //
 
-#import "UIColor+Utils.h"
+#import "UIColor+APUtils.h"
 
 @implementation UIColor (Utils)
 

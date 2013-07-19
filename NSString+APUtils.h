@@ -1,5 +1,5 @@
 //
-//  NSString+Utils.h
+//  NSString+APUtils.h
 //
 //  Created by Andrei Puni on 4/18/13.
 //

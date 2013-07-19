@@ -1,10 +1,10 @@
 //
-//  NSString+Utils.m
+//  NSString+APUtils.m
 //
 //  Created by Andrei Puni on 4/18/13.
 //
 
-#import "NSString+Utils.h"
+#import "NSString+APUtils.h"
 
 NSString *CamelCaseToUnderscores(NSString *input) {
     NSMutableString *output = [NSMutableString string];
