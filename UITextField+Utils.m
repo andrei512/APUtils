@@ -1,9 +1,7 @@
 //
 //  UITextField+Utils.m
-//  Point2Homes
 //
 //  Created by Andrei Puni on 4/30/13.
-//  Copyright (c) 2013 Point2. All rights reserved.
 //
 
 #import "UITextField+Utils.h"
@@ -11,9 +9,7 @@
 
 #import <objc/runtime.h>
 
-#define kStoreKey @"wshyuxxvtubrzrcukofb"
-
-static const char kUnformattedText;
+#define kStoreKey @"UITextField-text-store"
 
 @implementation UITextField (Utils)
 
@@ -41,16 +37,6 @@ static const char kUnformattedText;
     [[RACAble(self.text) throttle:0.6] subscribeNext:^(id text) {
         [[UITextField class] saveText:text forIdentifier:identifier];
     }];
-}
-
-#pragma mark - Properties
-
-- (void)setUnformattedText:(NSString *)unformattedText {
-    objc_setAssociatedObject(self, &kUnformattedText, unformattedText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString *)unformattedText {
-    return objc_getAssociatedObject(self, &kUnformattedText);
 }
 
 @end

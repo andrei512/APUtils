@@ -1,9 +1,7 @@
 //
 //  NSNumber+Utils.m
-//  Point2Homes
 //
 //  Created by Andrei Puni on 5/29/13.
-//  Copyright (c) 2013 Point2. All rights reserved.
 //
 
 #import "NSNumber+Utils.h"

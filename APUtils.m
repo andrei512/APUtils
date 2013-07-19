@@ -1,9 +1,7 @@
 //
 //  APUtils.m
-//  Point2Homes
 //
 //  Created by Andrei Puni on 4/18/13.
-//  Copyright (c) 2013 Point2. All rights reserved.
 //
 
 #import "APUtils.h"
