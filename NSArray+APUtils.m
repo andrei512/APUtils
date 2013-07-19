@@ -5,6 +5,7 @@
 //
 
 #import "NSArray+APUtils.h"
+#import "NSObject+APUtils.h"
 
 @implementation NSArray (Utils)
 
