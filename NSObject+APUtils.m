@@ -5,6 +5,7 @@
 //
 
 #import "NSObject+APUtils.h"
+#import "NSString+APUtils.h"
 #import "MARTNSObject.h"
 #import "RTProperty.h"
 #import "APUtils.h"
@@ -110,6 +111,42 @@
 
 - (NSString *)className {
     return NSStringFromClass(self.class);
+}
+
+- (NSString *)hashKey {
+    return [NSString stringWithFormat:@"%d", (int)self];
+}
+
+- (Class)classByRemovingSuffix:(NSString *)suffix {
+    return [[self class] classByRemovingSuffix:suffix];
+}
+
++ (Class)classByRemovingSuffix:(NSString *)suffix {
+    return [self classByReplacingSuffix:suffix with:@""];
+}
+
+- (Class)classByReplacingSuffix:(NSString *)suffix with:(NSString *)replacement {
+    return [[self class] classByReplacingSuffix:suffix with:replacement];
+}
+
++ (Class)classByReplacingSuffix:(NSString *)suffix with:(NSString *)replacement {
+    NSString *classnameWithoutSuffix = [NSStringFromClass([self class])
+                                        stringByRemovingSuffix:suffix];
+    
+    NSString *newClassname = [classnameWithoutSuffix stringByAppendingString:replacement];
+    
+    return NSClassFromString(newClassname);
+}
+
+
+- (Class)classByAddingSuffix:(NSString *)suffix {
+    return [[self class] classByAddingSuffix:suffix];
+}
+
++ (Class)classByAddingSuffix:(NSString *)suffix {
+    NSString *newClassname = [NSStringFromClass(self) stringByAppendingString:suffix];
+    
+    return NSClassFromString(newClassname);
 }
 
 @end
