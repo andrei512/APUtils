@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSNumber (Utils)
+@interface NSNumber (APUtils)
 
 - (NSString *)formatedString;
 

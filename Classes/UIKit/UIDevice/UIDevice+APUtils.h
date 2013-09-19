@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIDevice (Utils)
+@interface UIDevice (APUtils)
 
 // iPhone, iPad, iPod, Simulator
 + (NSString *)deviceType;

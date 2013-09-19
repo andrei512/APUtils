@@ -6,7 +6,7 @@
 
 #import "NSUserDefaults+APUtils.h"
 
-@implementation NSUserDefaults (Utils)
+@implementation NSUserDefaults (APUtils)
 
 + (BOOL)setUserValue:(id)value forKey:(id)key {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

@@ -6,13 +6,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef BOOL(^BoolBlock)(id object);
-typedef id(^ObjectBlock)(id object);
+typedef BOOL(^APBoolBlock)(id object);
+typedef id(^APObjectBlock)(id object);
 
-@interface NSArray (Utils)
+@interface NSArray (APUtils)
 
-- (NSMutableArray *)filter:(BoolBlock)block;
-- (NSMutableArray *)map:(ObjectBlock)block;
+- (NSMutableArray *)filter:(APBoolBlock)block;
+- (NSMutableArray *)map:(APObjectBlock)block;
 - (NSMutableArray *)mapWithSelector:(SEL)selector;
 - (NSMutableArray *)mapToClass:(Class)objectClass;
 

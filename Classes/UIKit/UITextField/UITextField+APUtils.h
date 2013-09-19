@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (Utils)
+@interface UITextField (APUtils)
 
 - (void)persistAs:(NSString *)identifier;
 

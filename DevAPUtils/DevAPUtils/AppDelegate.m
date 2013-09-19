@@ -10,10 +10,17 @@
 
 #import "ViewController.h"
 
+// this should import APUtils+Foundation
+#import "APUtils.h"
+
+#import "APUtilsFoundationExamples.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[APUtilsFoundationExamples new] runExamples];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

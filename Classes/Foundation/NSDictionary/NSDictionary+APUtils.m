@@ -6,7 +6,7 @@
 
 #import "NSDictionary+APUtils.h"
 
-@implementation NSDictionary (Utils)
+@implementation NSDictionary (APUtils)
 
 - (NSMutableDictionary *)merge:(NSDictionary *)dict {
     @try {

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Utils)
+@interface UIColor (APUtils)
 
 + (UIColor *)colorWithHex:(int)hex;
 

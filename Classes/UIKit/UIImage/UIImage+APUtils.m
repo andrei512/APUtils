@@ -6,7 +6,7 @@
 
 #import "UIImage+APUtils.h"
 
-@implementation UIImage (Utils)
+@implementation UIImage (APUtils)
 
 + (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);

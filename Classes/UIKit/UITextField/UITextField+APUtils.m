@@ -11,7 +11,7 @@
 
 #define kStoreKey @"UITextField-text-store"
 
-@implementation UITextField (Utils)
+@implementation UITextField (APUtils)
 
 + (void)clearStoredTexts {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

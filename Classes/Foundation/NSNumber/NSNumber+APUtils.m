@@ -6,7 +6,7 @@
 
 #import "NSNumber+APUtils.h"
 
-@implementation NSNumber (Utils)
+@implementation NSNumber (APUtils)
 
 - (NSString *)formatedString {
     static NSNumberFormatter *formatter = nil;
@@ -21,7 +21,7 @@
 }
 
 - (NSString *)formatedStringWithCurrency:(NSString *)currency {
-    static NSNumberFormatter *formatter = nil;
+    NSNumberFormatter *formatter = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
         [formatter setCurrencyCode:currency ?: @"USD"];

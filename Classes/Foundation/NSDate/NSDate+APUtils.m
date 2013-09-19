@@ -6,134 +6,128 @@
 
 #import "NSDate+APUtils.h"
 
-@implementation NSDate (Utils)
+typedef NSDictionary *(^APTimeIntervalBlock)(void);
 
+// sixty seconds * sexty minutes * twenty four hours
+const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 
-+ (NSDate *)today {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
+@implementation NSDate (APUtils)
+
++ (NSDictionary *)timeIntervalNamed:(NSString *)intervalName {
+    NSDictionary *timeIntervals = @{
+        @"today" : (NSDictionary *)^() {
+            return [NSDate todayTimeInterval];
+        },
+        @"thisWeek" : (NSDictionary *)^() {
+            return [NSDate thisWeekTimeInterval];
+        },
+        @"thisWeekend" : (NSDictionary *)^() {
+            return [NSDate thisWeekendTimeInterval];
+        },
+        @"sinceNow" : (NSDictionary *)^() {
+            return [NSDate sinceNowTimeInterval];
+        },
+    };
     
-    [components setHour:-[components hour]];
-    [components setMinute:-[components minute]];
-    [components setSecond:-[components second]];
-    NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
-
-    return today;
+    APTimeIntervalBlock block = timeIntervals[intervalName];
+    
+    if (block != nil) {
+        return block();
+    }
+    
+    return @{};
 }
 
-+ (NSDate *)yesterday {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
++ (NSDictionary *)timeIntervalWithBeginDate:(NSDate *)beginDate
+                                 andEndDate:(NSDate *)endDate {
+    NSMutableDictionary *timeInterval = [NSMutableDictionary dictionaryWithCapacity:2];
     
-    [components setHour:-[components hour]];
-    [components setMinute:-[components minute]];
-    [components setSecond:-[components second]];
-    NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
+    if (beginDate != nil) {
+        timeInterval[@"begin_date"] = beginDate.formatedDate;
+    }
     
-    [components setHour:-24];
-    [components setMinute:0];
-    [components setSecond:0];
-    NSDate *yesterday = [cal dateByAddingComponents:components toDate: today options:0];
+    if (endDate != nil) {
+        timeInterval[@"end_date"] = endDate.formatedDate;
+    }
     
-    return yesterday;
+    return timeInterval;
 }
 
-+ (NSDate *)thisWeek {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
++ (NSDictionary *)todayTimeInterval {
+    NSDate *today  = ((NSDate *)[NSDate date]).simpleDate;
     
-    [components setHour:-[components hour]];
-    [components setMinute:-[components minute]];
-    [components setSecond:-[components second]];
-    [components setHour:-24];
-    [components setMinute:0];
-    [components setSecond:0];
-    components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
-    [components setDay:([components day] - ([components weekday] - 1))];
-    NSDate *thisWeek  = [cal dateFromComponents:components];
-
-    return thisWeek;
+    return [NSDate timeIntervalWithBeginDate:today
+                                  andEndDate:today];
 }
 
-+ (NSDate *)lastWeek {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
-    
-    [components setHour:-[components hour]];
-    [components setMinute:-[components minute]];
-    [components setSecond:-[components second]];
-    [components setHour:-24];
-    [components setMinute:0];
-    [components setSecond:0];
-    components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
-    [components setDay:([components day] - ([components weekday] - 1))];
-    [components setDay:([components day] - 7)];
-    NSDate *lastWeek  = [cal dateFromComponents:components];
-    
-    return lastWeek;
++ (NSDictionary *)thisWeekTimeInterval {
+    NSDate *today = [NSDate date];
+    NSDate *firstDayOfTheWeek = [today getWeekday:2];
+    NSDate *lastDayOfTheWeek = [today getWeekday:8];
+    return [NSDate timeIntervalWithBeginDate:firstDayOfTheWeek
+                                  andEndDate:lastDayOfTheWeek];
 }
 
-+ (NSDate *)thisMonth {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
-    
-    [components setHour:-[components hour]];
-    [components setMinute:-[components minute]];
-    [components setSecond:-[components second]];
-    [components setHour:-24];
-    [components setMinute:0];
-    [components setSecond:0];
-    components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
-    [components setDay:([components day] - ([components weekday] - 1))];
-    [components setDay:([components day] - 7)];
-    [components setDay:([components day] - ([components day] -1))];
-    NSDate *thisMonth = [cal dateFromComponents:components];    
-
-    return thisMonth;
++ (NSDictionary *)thisWeekendTimeInterval {
+    NSDate *today = [NSDate date];
+    NSDate *firstDayOfTheWeekend = [today getWeekday:6];
+    NSDate *lastDayOfTheWeek = [today getWeekday:8];
+    return [NSDate timeIntervalWithBeginDate:firstDayOfTheWeekend
+                                  andEndDate:lastDayOfTheWeek];
 }
 
-+ (NSDate *)lastMonth {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
-   
-    [components setHour:-[components hour]];
-    [components setMinute:-[components minute]];
-    [components setSecond:-[components second]];
-    [components setHour:-24];
-    [components setMinute:0];
-    [components setSecond:0];
-    components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
-    [components setDay:([components day] - ([components weekday] - 1))];
-    [components setDay:([components day] - 7)];
-    [components setDay:([components day] - ([components day] -1))];
-    [components setMonth:([components month] - 1)];
-    NSDate *lastMonth = [cal dateFromComponents:components];
-    
-    return lastMonth;
++ (NSDictionary *)sinceNowTimeInterval {
+    NSDate *today = [NSDate date];
+    return [NSDate timeIntervalWithBeginDate:today
+                                  andEndDate:nil];
 }
 
-+ (NSDate *)oneWeekAgo {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:(NSHourCalendarUnit |
-                                                    NSMinuteCalendarUnit |
-                                                    NSSecondCalendarUnit)
-                                          fromDate:[[NSDate alloc] init]];
+// returns the N-th day from a week
+- (NSDate *)getWeekday:(int)weekdayNumber {
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    [components setDay:[components day] - 7];
-    NSDate *oneWeekAgo  = [cal dateFromComponents:components];
-    return oneWeekAgo;
+    NSDateComponents *components = [cal components:
+                                    NSMonthCalendarUnit |
+                                    NSYearCalendarUnit |
+                                    NSWeekdayCalendarUnit |
+                                    NSYearForWeekOfYearCalendarUnit |
+                                    NSWeekCalendarUnit
+                                          fromDate:self];
+    
+    if (weekdayNumber > 7) {
+        weekdayNumber -= 7;
+        [components setWeek:components.week + 1];
+    }
+    
+    [components setWeekday:weekdayNumber];
+    
+    return [cal dateFromComponents:components];
 }
 
-+ (NSDate *)oneMonthAgo {
+// keeps only the year, month and day of the month
+- (NSDate *)simpleDate {
     NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:(NSHourCalendarUnit |
-                                                    NSMinuteCalendarUnit |
-                                                    NSSecondCalendarUnit)
-                                          fromDate:[[NSDate alloc] init]];
     
-    [components setDay:[components day] - 30];
-    NSDate *oneWeekAgo  = [cal dateFromComponents:components];
-    return oneWeekAgo;
+    NSDateComponents *components = [cal components:NSDayCalendarUnit |
+                                    NSMonthCalendarUnit |
+                                    NSYearCalendarUnit
+                                          fromDate:self];
+    
+    return [cal dateFromComponents:components];
 }
+
+
+#pragma mark - Date Formating
+
+- (NSString *)formatedDate {
+    return [self formatedDateWithFormat:@"yyyy-MM-dd"];
+}
+
+- (NSString *)formatedDateWithFormat:(NSString *)dateFormat {
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:dateFormat];
+    return [dateFormater stringFromDate:self];
+}
+
 
 @end

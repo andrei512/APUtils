@@ -19,9 +19,25 @@
 		75A9D64817EB372D005A25B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A9D64717EB372D005A25B8 /* ViewController.m */; };
 		75A9D64B17EB372D005A25B8 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A9D64917EB372D005A25B8 /* ViewController_iPhone.xib */; };
 		75A9D64E17EB372D005A25B8 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A9D64C17EB372D005A25B8 /* ViewController_iPad.xib */; };
+		75E7A8D217EB395A00CE90AF /* APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8AC17EB395A00CE90AF /* APUtils.m */; };
+		75E7A8D317EB395A00CE90AF /* NSArray+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8B017EB395A00CE90AF /* NSArray+APUtils.m */; };
+		75E7A8D417EB395A00CE90AF /* NSDate+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8B317EB395A00CE90AF /* NSDate+APUtils.m */; };
+		75E7A8D517EB395A00CE90AF /* NSDictionary+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8B617EB395A00CE90AF /* NSDictionary+APUtils.m */; };
+		75E7A8D617EB395A00CE90AF /* NSNumber+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8B917EB395A00CE90AF /* NSNumber+APUtils.m */; };
+		75E7A8D717EB395A00CE90AF /* NSObject+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8BC17EB395A00CE90AF /* NSObject+APUtils.m */; };
+		75E7A8D817EB395A00CE90AF /* NSString+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8BF17EB395A00CE90AF /* NSString+APUtils.m */; };
+		75E7A8D917EB395A00CE90AF /* NSUserDefaults+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8C217EB395A00CE90AF /* NSUserDefaults+APUtils.m */; };
+		75E7A8DA17EB395A00CE90AF /* UIColor+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8C617EB395A00CE90AF /* UIColor+APUtils.m */; };
+		75E7A8DB17EB395A00CE90AF /* UIDevice+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8C917EB395A00CE90AF /* UIDevice+APUtils.m */; };
+		75E7A8DC17EB395A00CE90AF /* UIImage+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8CC17EB395A00CE90AF /* UIImage+APUtils.m */; };
+		75E7A8DD17EB395A00CE90AF /* UITextField+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8CF17EB395A00CE90AF /* UITextField+APUtils.m */; };
+		75E7A8E617EB3FCA00CE90AF /* APUtilsFoundationExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8E517EB3FCA00CE90AF /* APUtilsFoundationExamples.m */; };
+		75E7A8E817EB431000CE90AF /* Users.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75E7A8E717EB431000CE90AF /* Users.plist */; };
+		EB72E8B17C114005BE57CF7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B818EBDF86456AB01E3CF2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41B818EBDF86456AB01E3CF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A9D62B17EB372D005A25B8 /* DevAPUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAPUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A9D62E17EB372D005A25B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75A9D63017EB372D005A25B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +55,36 @@
 		75A9D64717EB372D005A25B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		75A9D64A17EB372D005A25B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		75A9D64D17EB372D005A25B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		75E7A8AB17EB395A00CE90AF /* APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APUtils.h; sourceTree = "<group>"; };
+		75E7A8AC17EB395A00CE90AF /* APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APUtils.m; sourceTree = "<group>"; };
+		75E7A8AF17EB395A00CE90AF /* NSArray+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8B017EB395A00CE90AF /* NSArray+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8B217EB395A00CE90AF /* NSDate+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8B317EB395A00CE90AF /* NSDate+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8B517EB395A00CE90AF /* NSDictionary+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8B617EB395A00CE90AF /* NSDictionary+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8B817EB395A00CE90AF /* NSNumber+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8B917EB395A00CE90AF /* NSNumber+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8BB17EB395A00CE90AF /* NSObject+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8BC17EB395A00CE90AF /* NSObject+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8BE17EB395A00CE90AF /* NSString+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8BF17EB395A00CE90AF /* NSString+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8C117EB395A00CE90AF /* NSUserDefaults+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8C217EB395A00CE90AF /* NSUserDefaults+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8C517EB395A00CE90AF /* UIColor+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8C617EB395A00CE90AF /* UIColor+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8C817EB395A00CE90AF /* UIDevice+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8C917EB395A00CE90AF /* UIDevice+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8CB17EB395A00CE90AF /* UIImage+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8CC17EB395A00CE90AF /* UIImage+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8CE17EB395A00CE90AF /* UITextField+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8CF17EB395A00CE90AF /* UITextField+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+APUtils.m"; sourceTree = "<group>"; };
+		75E7A8DF17EB3EAF00CE90AF /* APUtils+Foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APUtils+Foundation.h"; sourceTree = "<group>"; };
+		75E7A8E017EB3F4300CE90AF /* APUtils+UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APUtils+UIKit.h"; sourceTree = "<group>"; };
+		75E7A8E417EB3FCA00CE90AF /* APUtilsFoundationExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APUtilsFoundationExamples.h; sourceTree = "<group>"; };
+		75E7A8E517EB3FCA00CE90AF /* APUtilsFoundationExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APUtilsFoundationExamples.m; sourceTree = "<group>"; };
+		75E7A8E717EB431000CE90AF /* Users.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Users.plist; sourceTree = "<group>"; };
+		D752F7B7B5954238B8B9B597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +95,7 @@
 				75A9D62F17EB372D005A25B8 /* UIKit.framework in Frameworks */,
 				75A9D63117EB372D005A25B8 /* Foundation.framework in Frameworks */,
 				75A9D63317EB372D005A25B8 /* CoreGraphics.framework in Frameworks */,
+				EB72E8B17C114005BE57CF7A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +108,7 @@
 				75A9D63417EB372D005A25B8 /* DevAPUtils */,
 				75A9D62D17EB372D005A25B8 /* Frameworks */,
 				75A9D62C17EB372D005A25B8 /* Products */,
+				D752F7B7B5954238B8B9B597 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +126,7 @@
 				75A9D62E17EB372D005A25B8 /* UIKit.framework */,
 				75A9D63017EB372D005A25B8 /* Foundation.framework */,
 				75A9D63217EB372D005A25B8 /* CoreGraphics.framework */,
+				41B818EBDF86456AB01E3CF2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,6 +134,8 @@
 		75A9D63417EB372D005A25B8 /* DevAPUtils */ = {
 			isa = PBXGroup;
 			children = (
+				75E7A8E117EB3FAD00CE90AF /* Examples */,
+				75E7A8AA17EB395A00CE90AF /* Classes */,
 				75A9D63D17EB372D005A25B8 /* AppDelegate.h */,
 				75A9D63E17EB372D005A25B8 /* AppDelegate.m */,
 				75A9D64617EB372D005A25B8 /* ViewController.h */,
@@ -110,6 +161,186 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		75E7A8AA17EB395A00CE90AF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8AB17EB395A00CE90AF /* APUtils.h */,
+				75E7A8AC17EB395A00CE90AF /* APUtils.m */,
+				75E7A8AD17EB395A00CE90AF /* Foundation */,
+				75E7A8C317EB395A00CE90AF /* UIKit */,
+			);
+			name = Classes;
+			path = ../../Classes;
+			sourceTree = "<group>";
+		};
+		75E7A8AD17EB395A00CE90AF /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8AE17EB395A00CE90AF /* NSArray */,
+				75E7A8B117EB395A00CE90AF /* NSDate */,
+				75E7A8B417EB395A00CE90AF /* NSDictionary */,
+				75E7A8B717EB395A00CE90AF /* NSNumber */,
+				75E7A8BA17EB395A00CE90AF /* NSObject */,
+				75E7A8BD17EB395A00CE90AF /* NSString */,
+				75E7A8C017EB395A00CE90AF /* NSUserDefaults */,
+				75E7A8DF17EB3EAF00CE90AF /* APUtils+Foundation.h */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		75E7A8AE17EB395A00CE90AF /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8AF17EB395A00CE90AF /* NSArray+APUtils.h */,
+				75E7A8B017EB395A00CE90AF /* NSArray+APUtils.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		75E7A8B117EB395A00CE90AF /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8B217EB395A00CE90AF /* NSDate+APUtils.h */,
+				75E7A8B317EB395A00CE90AF /* NSDate+APUtils.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		75E7A8B417EB395A00CE90AF /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8B517EB395A00CE90AF /* NSDictionary+APUtils.h */,
+				75E7A8B617EB395A00CE90AF /* NSDictionary+APUtils.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		75E7A8B717EB395A00CE90AF /* NSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8B817EB395A00CE90AF /* NSNumber+APUtils.h */,
+				75E7A8B917EB395A00CE90AF /* NSNumber+APUtils.m */,
+			);
+			path = NSNumber;
+			sourceTree = "<group>";
+		};
+		75E7A8BA17EB395A00CE90AF /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8BB17EB395A00CE90AF /* NSObject+APUtils.h */,
+				75E7A8BC17EB395A00CE90AF /* NSObject+APUtils.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		75E7A8BD17EB395A00CE90AF /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8BE17EB395A00CE90AF /* NSString+APUtils.h */,
+				75E7A8BF17EB395A00CE90AF /* NSString+APUtils.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		75E7A8C017EB395A00CE90AF /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8C117EB395A00CE90AF /* NSUserDefaults+APUtils.h */,
+				75E7A8C217EB395A00CE90AF /* NSUserDefaults+APUtils.m */,
+			);
+			path = NSUserDefaults;
+			sourceTree = "<group>";
+		};
+		75E7A8C317EB395A00CE90AF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8C417EB395A00CE90AF /* UIColor */,
+				75E7A8C717EB395A00CE90AF /* UIDevice */,
+				75E7A8CA17EB395A00CE90AF /* UIImage */,
+				75E7A8CD17EB395A00CE90AF /* UITextField */,
+				75E7A8D017EB395A00CE90AF /* UIView */,
+				75E7A8D117EB395A00CE90AF /* UIVIewController */,
+				75E7A8E017EB3F4300CE90AF /* APUtils+UIKit.h */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		75E7A8C417EB395A00CE90AF /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8C517EB395A00CE90AF /* UIColor+APUtils.h */,
+				75E7A8C617EB395A00CE90AF /* UIColor+APUtils.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		75E7A8C717EB395A00CE90AF /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8C817EB395A00CE90AF /* UIDevice+APUtils.h */,
+				75E7A8C917EB395A00CE90AF /* UIDevice+APUtils.m */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
+		75E7A8CA17EB395A00CE90AF /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8CB17EB395A00CE90AF /* UIImage+APUtils.h */,
+				75E7A8CC17EB395A00CE90AF /* UIImage+APUtils.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		75E7A8CD17EB395A00CE90AF /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8CE17EB395A00CE90AF /* UITextField+APUtils.h */,
+				75E7A8CF17EB395A00CE90AF /* UITextField+APUtils.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		75E7A8D017EB395A00CE90AF /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		75E7A8D117EB395A00CE90AF /* UIVIewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIVIewController;
+			sourceTree = "<group>";
+		};
+		75E7A8E117EB3FAD00CE90AF /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8E217EB3FAD00CE90AF /* Foundation */,
+				75E7A8E317EB3FAD00CE90AF /* UIKit */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		75E7A8E217EB3FAD00CE90AF /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8E417EB3FCA00CE90AF /* APUtilsFoundationExamples.h */,
+				75E7A8E517EB3FCA00CE90AF /* APUtilsFoundationExamples.m */,
+				75E7A8E717EB431000CE90AF /* Users.plist */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		75E7A8E317EB3FAD00CE90AF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,9 +348,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75A9D65117EB372D005A25B8 /* Build configuration list for PBXNativeTarget "DevAPUtils" */;
 			buildPhases = (
+				D6578055A0A94B2A8F56CF7D /* Check Pods Manifest.lock */,
 				75A9D62717EB372D005A25B8 /* Sources */,
 				75A9D62817EB372D005A25B8 /* Frameworks */,
 				75A9D62917EB372D005A25B8 /* Resources */,
+				8A9367259A5E4E1ABBE32DAE /* Copy Pods Resources */,
+				75E7A8DE17EB3B6100CE90AF /* To Do */,
 			);
 			buildRules = (
 			);
@@ -167,10 +401,58 @@
 				75A9D64517EB372D005A25B8 /* Default-568h@2x.png in Resources */,
 				75A9D64B17EB372D005A25B8 /* ViewController_iPhone.xib in Resources */,
 				75A9D64E17EB372D005A25B8 /* ViewController_iPad.xib in Resources */,
+				75E7A8E817EB431000CE90AF /* Users.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75E7A8DE17EB3B6100CE90AF /* To Do */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "To Do";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"FIXME:|\\?\\?\\?:|\\!\\!\\!:|To do:|TO DO:\"\nfind ${SRCROOT} \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+		8A9367259A5E4E1ABBE32DAE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6578055A0A94B2A8F56CF7D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		75A9D62717EB372D005A25B8 /* Sources */ = {
@@ -180,6 +462,19 @@
 				75A9D63B17EB372D005A25B8 /* main.m in Sources */,
 				75A9D63F17EB372D005A25B8 /* AppDelegate.m in Sources */,
 				75A9D64817EB372D005A25B8 /* ViewController.m in Sources */,
+				75E7A8D217EB395A00CE90AF /* APUtils.m in Sources */,
+				75E7A8D317EB395A00CE90AF /* NSArray+APUtils.m in Sources */,
+				75E7A8D417EB395A00CE90AF /* NSDate+APUtils.m in Sources */,
+				75E7A8D517EB395A00CE90AF /* NSDictionary+APUtils.m in Sources */,
+				75E7A8D617EB395A00CE90AF /* NSNumber+APUtils.m in Sources */,
+				75E7A8D717EB395A00CE90AF /* NSObject+APUtils.m in Sources */,
+				75E7A8D817EB395A00CE90AF /* NSString+APUtils.m in Sources */,
+				75E7A8D917EB395A00CE90AF /* NSUserDefaults+APUtils.m in Sources */,
+				75E7A8DA17EB395A00CE90AF /* UIColor+APUtils.m in Sources */,
+				75E7A8DB17EB395A00CE90AF /* UIDevice+APUtils.m in Sources */,
+				75E7A8DC17EB395A00CE90AF /* UIImage+APUtils.m in Sources */,
+				75E7A8DD17EB395A00CE90AF /* UITextField+APUtils.m in Sources */,
+				75E7A8E617EB3FCA00CE90AF /* APUtilsFoundationExamples.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +568,7 @@
 		};
 		75A9D65217EB372D005A25B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D752F7B7B5954238B8B9B597 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevAPUtils/DevAPUtils-Prefix.pch";
@@ -284,6 +580,7 @@
 		};
 		75A9D65317EB372D005A25B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D752F7B7B5954238B8B9B597 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevAPUtils/DevAPUtils-Prefix.pch";
@@ -312,6 +609,7 @@
 				75A9D65317EB372D005A25B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

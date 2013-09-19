@@ -4,14 +4,7 @@
 //  Created by Andrei Puni on 4/18/13.
 //
  
-#import "NSString+APUtils.h"
-#import "NSArray+APUtils.h"
-#import "NSDictionary+APUtils.h"
-
-#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-#define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0f)
-#define IS_IPHONE_4 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 480.0f)
+#import "APUtils+Foundation.h"
 
 @interface APUtils : NSObject
 
@@ -22,6 +15,11 @@
 + (void)benchmark:(void(^)(void))block;
 
 @end
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0f)
+#define IS_IPHONE_4 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 480.0f)
 
 #ifdef DEBUG
     /// Stick this in code you want to assert if run on the main UI thread.

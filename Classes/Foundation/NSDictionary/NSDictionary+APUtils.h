@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (Utils)
+@interface NSDictionary (APUtils)
 
 - (NSMutableDictionary *)merge:(NSDictionary *)dict;
 

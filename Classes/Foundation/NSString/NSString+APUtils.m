@@ -46,7 +46,7 @@ NSString *CapitalizeFirst(NSString *source) {
 }
 
 
-@implementation NSString (Utils)
+@implementation NSString (APUtils)
 
 - (NSString *)stringByRemovingSuffix:(NSString *)suffix {
     if (suffix.length > self.length) {

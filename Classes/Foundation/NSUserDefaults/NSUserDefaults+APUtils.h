@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSUserDefaults (Utils)
+@interface NSUserDefaults (APUtils)
 
 + (BOOL)setUserValue:(id)value forKey:(id)key;
 + (id)valueForKey:(NSString *)key;

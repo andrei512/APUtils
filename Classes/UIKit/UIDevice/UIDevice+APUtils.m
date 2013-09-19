@@ -7,7 +7,7 @@
 #import "UIDevice+APUtils.h"
 #import "NSString+APUtils.h"
 
-@implementation UIDevice (Utils)
+@implementation UIDevice (APUtils)
 
 + (NSString *)deviceType {
     NSString *devicePlatform = [[UIDevice currentDevice] model];

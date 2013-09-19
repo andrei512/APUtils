@@ -7,9 +7,9 @@
 #import "NSArray+APUtils.h"
 #import "NSObject+APUtils.h"
 
-@implementation NSArray (Utils)
+@implementation NSArray (APUtils)
 
-- (NSMutableArray *)filter:(BoolBlock)block {
+- (NSMutableArray *)filter:(APBoolBlock)block {
     NSMutableArray *result = [NSMutableArray array];
     for (id object in self) {
         if (block(object)) {
@@ -19,7 +19,7 @@
     return result;
 }
 
-- (NSMutableArray *)map:(ObjectBlock)block {
+- (NSMutableArray *)map:(APObjectBlock)block {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     for (id object in self) {
         [result addObject:block(object)];
@@ -27,6 +27,7 @@
     return result;
 }
 
+#pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 - (NSMutableArray *)mapWithSelector:(SEL)selector {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
@@ -35,7 +36,7 @@
     }
     return result;
 }
-
+#pragma clang diagnostic pop
 
 - (NSMutableArray *)mapToClass:(Class)objectClass {
     return [self map:^id(id object) {

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (Utils)
+@interface UIImage (APUtils)
 
 + (UIImage *)imageWithColor:(UIColor *)color;
 

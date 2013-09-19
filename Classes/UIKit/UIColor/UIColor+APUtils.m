@@ -6,7 +6,7 @@
 
 #import "UIColor+APUtils.h"
 
-@implementation UIColor (Utils)
+@implementation UIColor (APUtils)
 
 + (UIColor *)colorWithHex:(int)hex {
     int r = (hex >> 16) & 255;
