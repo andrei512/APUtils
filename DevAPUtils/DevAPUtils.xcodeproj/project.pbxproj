@@ -19,6 +19,7 @@
 		75A9D64817EB372D005A25B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A9D64717EB372D005A25B8 /* ViewController.m */; };
 		75A9D64B17EB372D005A25B8 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A9D64917EB372D005A25B8 /* ViewController_iPhone.xib */; };
 		75A9D64E17EB372D005A25B8 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A9D64C17EB372D005A25B8 /* ViewController_iPad.xib */; };
+		75BE322117EB652100369A18 /* megaxib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BE322017EB652100369A18 /* megaxib.xib */; };
 		75E7A8D217EB395A00CE90AF /* APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8AC17EB395A00CE90AF /* APUtils.m */; };
 		75E7A8D317EB395A00CE90AF /* NSArray+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8B017EB395A00CE90AF /* NSArray+APUtils.m */; };
 		75E7A8D417EB395A00CE90AF /* NSDate+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8B317EB395A00CE90AF /* NSDate+APUtils.m */; };
@@ -55,6 +56,7 @@
 		75A9D64717EB372D005A25B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		75A9D64A17EB372D005A25B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		75A9D64D17EB372D005A25B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		75BE322017EB652100369A18 /* megaxib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = megaxib.xib; sourceTree = "<group>"; };
 		75E7A8AB17EB395A00CE90AF /* APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APUtils.h; sourceTree = "<group>"; };
 		75E7A8AC17EB395A00CE90AF /* APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APUtils.m; sourceTree = "<group>"; };
 		75E7A8AF17EB395A00CE90AF /* NSArray+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+APUtils.h"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				75A9D64717EB372D005A25B8 /* ViewController.m */,
 				75A9D64917EB372D005A25B8 /* ViewController_iPhone.xib */,
 				75A9D64C17EB372D005A25B8 /* ViewController_iPad.xib */,
+				75BE322017EB652100369A18 /* megaxib.xib */,
 				75A9D63517EB372D005A25B8 /* Supporting Files */,
 			);
 			path = DevAPUtils;
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A9D63917EB372D005A25B8 /* InfoPlist.strings in Resources */,
+				75BE322117EB652100369A18 /* megaxib.xib in Resources */,
 				75A9D64117EB372D005A25B8 /* Default.png in Resources */,
 				75A9D64317EB372D005A25B8 /* Default@2x.png in Resources */,
 				75A9D64517EB372D005A25B8 /* Default-568h@2x.png in Resources */,

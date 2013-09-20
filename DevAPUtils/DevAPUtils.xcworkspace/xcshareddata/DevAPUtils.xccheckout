@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1937264F-9498-420F-96AF-5924EB3F6A93</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DevAPUtils</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0AE2008-0A62-4062-A21F-137B620528F2</key>
+		<string>https://github.com/andrei512/APUtils.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DevAPUtils/DevAPUtils.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0AE2008-0A62-4062-A21F-137B620528F2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/andrei512/APUtils.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0AE2008-0A62-4062-A21F-137B620528F2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0AE2008-0A62-4062-A21F-137B620528F2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>APUtils</string>
+		</dict>
+	</array>
+</dict>
+</plist>
