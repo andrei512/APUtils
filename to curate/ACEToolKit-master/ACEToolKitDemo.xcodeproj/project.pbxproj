@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B035FF016AEEDCC002140DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B035FEF16AEEDCC002140DF /* UIKit.framework */; };
+		7B035FF216AEEDCC002140DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B035FF116AEEDCC002140DF /* Foundation.framework */; };
+		7B035FF416AEEDCC002140DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B035FF316AEEDCC002140DF /* CoreGraphics.framework */; };
+		7B035FFA16AEEDCC002140DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B035FF816AEEDCC002140DF /* InfoPlist.strings */; };
+		7B035FFC16AEEDCC002140DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B035FFB16AEEDCC002140DF /* main.m */; };
+		7B03600016AEEDCC002140DF /* ACEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B035FFF16AEEDCC002140DF /* ACEAppDelegate.m */; };
+		7B03600216AEEDCC002140DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B03600116AEEDCC002140DF /* Default.png */; };
+		7B03600416AEEDCC002140DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B03600316AEEDCC002140DF /* Default@2x.png */; };
+		7B03600616AEEDCC002140DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B03600516AEEDCC002140DF /* Default-568h@2x.png */; };
+		7B03600916AEEDCC002140DF /* ACEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B03600816AEEDCC002140DF /* ACEViewController.m */; };
+		7B03600C16AEEDCC002140DF /* ACEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B03600A16AEEDCC002140DF /* ACEViewController.xib */; };
+		7B03602D16AF0132002140DF /* ACEActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B03602916AF0132002140DF /* ACEActionSheet.m */; };
+		7B03602E16AF0132002140DF /* ACEAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B03602B16AF0132002140DF /* ACEAlertView.m */; };
+		7B03603716AF1C1F002140DF /* UIView+ACEToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B03603616AF1C1F002140DF /* UIView+ACEToolKit.m */; };
+		7B03603B16AF2014002140DF /* UIColor+ACEToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B03603A16AF2014002140DF /* UIColor+ACEToolKit.m */; };
+		7B27004316AF4A9400B1531C /* UILabel+ACEToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B27004216AF4A9400B1531C /* UILabel+ACEToolKit.m */; };
+		7B64ECAB16B9E6710043763E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B64ECAA16B9E6710043763E /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B035FEB16AEEDCC002140DF /* ACEToolKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACEToolKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B035FEF16AEEDCC002140DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7B035FF116AEEDCC002140DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7B035FF316AEEDCC002140DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7B035FF716AEEDCC002140DF /* ACEToolKitDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACEToolKitDemo-Info.plist"; sourceTree = "<group>"; };
+		7B035FF916AEEDCC002140DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B035FFB16AEEDCC002140DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B035FFD16AEEDCC002140DF /* ACEToolKitDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ACEToolKitDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7B035FFE16AEEDCC002140DF /* ACEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACEAppDelegate.h; sourceTree = "<group>"; };
+		7B035FFF16AEEDCC002140DF /* ACEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACEAppDelegate.m; sourceTree = "<group>"; };
+		7B03600116AEEDCC002140DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7B03600316AEEDCC002140DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7B03600516AEEDCC002140DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7B03600716AEEDCC002140DF /* ACEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACEViewController.h; sourceTree = "<group>"; };
+		7B03600816AEEDCC002140DF /* ACEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACEViewController.m; sourceTree = "<group>"; };
+		7B03600B16AEEDCC002140DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ACEViewController.xib; sourceTree = "<group>"; };
+		7B03602816AF0132002140DF /* ACEActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEActionSheet.h; sourceTree = "<group>"; };
+		7B03602916AF0132002140DF /* ACEActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEActionSheet.m; sourceTree = "<group>"; };
+		7B03602A16AF0132002140DF /* ACEAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEAlertView.h; sourceTree = "<group>"; };
+		7B03602B16AF0132002140DF /* ACEAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEAlertView.m; sourceTree = "<group>"; };
+		7B03602C16AF0132002140DF /* ACEToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEToolKit.h; sourceTree = "<group>"; };
+		7B03603516AF1C1F002140DF /* UIView+ACEToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ACEToolKit.h"; sourceTree = "<group>"; };
+		7B03603616AF1C1F002140DF /* UIView+ACEToolKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ACEToolKit.m"; sourceTree = "<group>"; };
+		7B03603916AF2014002140DF /* UIColor+ACEToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ACEToolKit.h"; sourceTree = "<group>"; };
+		7B03603A16AF2014002140DF /* UIColor+ACEToolKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ACEToolKit.m"; sourceTree = "<group>"; };
+		7B27004116AF4A9400B1531C /* UILabel+ACEToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ACEToolKit.h"; sourceTree = "<group>"; };
+		7B27004216AF4A9400B1531C /* UILabel+ACEToolKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ACEToolKit.m"; sourceTree = "<group>"; };
+		7B64ECAA16B9E6710043763E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B035FE816AEEDCC002140DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B64ECAB16B9E6710043763E /* QuartzCore.framework in Frameworks */,
+				7B035FF016AEEDCC002140DF /* UIKit.framework in Frameworks */,
+				7B035FF216AEEDCC002140DF /* Foundation.framework in Frameworks */,
+				7B035FF416AEEDCC002140DF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B035FE016AEEDCC002140DF = {
+			isa = PBXGroup;
+			children = (
+				7B035FF516AEEDCC002140DF /* ACEToolKitDemo */,
+				7B035FEE16AEEDCC002140DF /* Frameworks */,
+				7B035FEC16AEEDCC002140DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B035FEC16AEEDCC002140DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B035FEB16AEEDCC002140DF /* ACEToolKitDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B035FEE16AEEDCC002140DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B035FF316AEEDCC002140DF /* CoreGraphics.framework */,
+				7B035FF116AEEDCC002140DF /* Foundation.framework */,
+				7B64ECAA16B9E6710043763E /* QuartzCore.framework */,
+				7B035FEF16AEEDCC002140DF /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B035FF516AEEDCC002140DF /* ACEToolKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7B03602716AF0132002140DF /* ACEToolKit */,
+				7B035FFE16AEEDCC002140DF /* ACEAppDelegate.h */,
+				7B035FFF16AEEDCC002140DF /* ACEAppDelegate.m */,
+				7B03600716AEEDCC002140DF /* ACEViewController.h */,
+				7B03600816AEEDCC002140DF /* ACEViewController.m */,
+				7B03600A16AEEDCC002140DF /* ACEViewController.xib */,
+				7B035FF616AEEDCC002140DF /* Supporting Files */,
+			);
+			path = ACEToolKitDemo;
+			sourceTree = "<group>";
+		};
+		7B035FF616AEEDCC002140DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B035FF716AEEDCC002140DF /* ACEToolKitDemo-Info.plist */,
+				7B035FF816AEEDCC002140DF /* InfoPlist.strings */,
+				7B035FFB16AEEDCC002140DF /* main.m */,
+				7B035FFD16AEEDCC002140DF /* ACEToolKitDemo-Prefix.pch */,
+				7B03600116AEEDCC002140DF /* Default.png */,
+				7B03600316AEEDCC002140DF /* Default@2x.png */,
+				7B03600516AEEDCC002140DF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B03602716AF0132002140DF /* ACEToolKit */ = {
+			isa = PBXGroup;
+			children = (
+				7B03603416AF1B30002140DF /* UI */,
+				7B03602C16AF0132002140DF /* ACEToolKit.h */,
+			);
+			path = ACEToolKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		7B03603416AF1B30002140DF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7B03603816AF1C26002140DF /* Additions */,
+				7B03602816AF0132002140DF /* ACEActionSheet.h */,
+				7B03602916AF0132002140DF /* ACEActionSheet.m */,
+				7B03602A16AF0132002140DF /* ACEAlertView.h */,
+				7B03602B16AF0132002140DF /* ACEAlertView.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		7B03603816AF1C26002140DF /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				7B03603916AF2014002140DF /* UIColor+ACEToolKit.h */,
+				7B03603A16AF2014002140DF /* UIColor+ACEToolKit.m */,
+				7B27004116AF4A9400B1531C /* UILabel+ACEToolKit.h */,
+				7B27004216AF4A9400B1531C /* UILabel+ACEToolKit.m */,
+				7B03603516AF1C1F002140DF /* UIView+ACEToolKit.h */,
+				7B03603616AF1C1F002140DF /* UIView+ACEToolKit.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B035FEA16AEEDCC002140DF /* ACEToolKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B03600F16AEEDCC002140DF /* Build configuration list for PBXNativeTarget "ACEToolKitDemo" */;
+			buildPhases = (
+				7B035FE716AEEDCC002140DF /* Sources */,
+				7B035FE816AEEDCC002140DF /* Frameworks */,
+				7B035FE916AEEDCC002140DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACEToolKitDemo;
+			productName = ACEToolKitDemo;
+			productReference = 7B035FEB16AEEDCC002140DF /* ACEToolKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B035FE216AEEDCC002140DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ACE;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Stefano Acerbetti";
+			};
+			buildConfigurationList = 7B035FE516AEEDCC002140DF /* Build configuration list for PBXProject "ACEToolKitDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7B035FE016AEEDCC002140DF;
+			productRefGroup = 7B035FEC16AEEDCC002140DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B035FEA16AEEDCC002140DF /* ACEToolKitDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B035FE916AEEDCC002140DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B035FFA16AEEDCC002140DF /* InfoPlist.strings in Resources */,
+				7B03600216AEEDCC002140DF /* Default.png in Resources */,
+				7B03600416AEEDCC002140DF /* Default@2x.png in Resources */,
+				7B03600616AEEDCC002140DF /* Default-568h@2x.png in Resources */,
+				7B03600C16AEEDCC002140DF /* ACEViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B035FE716AEEDCC002140DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B035FFC16AEEDCC002140DF /* main.m in Sources */,
+				7B03600016AEEDCC002140DF /* ACEAppDelegate.m in Sources */,
+				7B03600916AEEDCC002140DF /* ACEViewController.m in Sources */,
+				7B03602D16AF0132002140DF /* ACEActionSheet.m in Sources */,
+				7B03602E16AF0132002140DF /* ACEAlertView.m in Sources */,
+				7B03603716AF1C1F002140DF /* UIView+ACEToolKit.m in Sources */,
+				7B03603B16AF2014002140DF /* UIColor+ACEToolKit.m in Sources */,
+				7B27004316AF4A9400B1531C /* UILabel+ACEToolKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7B035FF816AEEDCC002140DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B035FF916AEEDCC002140DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7B03600A16AEEDCC002140DF /* ACEViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B03600B16AEEDCC002140DF /* en */,
+			);
+			name = ACEViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B03600D16AEEDCC002140DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7B03600E16AEEDCC002140DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B03601016AEEDCC002140DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACEToolKitDemo/ACEToolKitDemo-Prefix.pch";
+				INFOPLIST_FILE = "ACEToolKitDemo/ACEToolKitDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7B03601116AEEDCC002140DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACEToolKitDemo/ACEToolKitDemo-Prefix.pch";
+				INFOPLIST_FILE = "ACEToolKitDemo/ACEToolKitDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B035FE516AEEDCC002140DF /* Build configuration list for PBXProject "ACEToolKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B03600D16AEEDCC002140DF /* Debug */,
+				7B03600E16AEEDCC002140DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B03600F16AEEDCC002140DF /* Build configuration list for PBXNativeTarget "ACEToolKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B03601016AEEDCC002140DF /* Debug */,
+				7B03601116AEEDCC002140DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B035FE216AEEDCC002140DF /* Project object */;
+}

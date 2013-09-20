@@ -1,0 +1,13 @@
+platform :ios, "5.0"
+workspace 'OLCategoryHelperDemo'
+
+# OLCategoryHelper
+pod 'OLCategoryHelper/Category/NSDate', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/NSData', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/NSNumber', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/NSString', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/UIColor', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/UIDevice', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/UIImage', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/UINavigationController', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
+pod 'OLCategoryHelper/Category/UIView', :podspec => 'https://gist.github.com/payliu/6432443/raw/OLCategoryHelper.podspec'
