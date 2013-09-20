@@ -4,6 +4,10 @@ APUtils [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large
 A collection of helpful categories for base obj-c classes and snippets I collected in three years of iOS development.
 
 
+
+
+
+
 ## APUtils.h
 
 ```objective-c
