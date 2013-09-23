@@ -6,5 +6,9 @@
 //  Copyright (c) 2013 Andrei Puni. All rights reserved.
 //
 
-#import "UIView+APUtils.h"
 #import "UIColor+APUtils.h"
+#import "UIDevice+APUtils.h"
+#import "UIImage+APUtils.h"
+#import "UITextField+APUtils.h"
+
+

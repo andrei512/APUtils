@@ -28,6 +28,7 @@
 
 - (void)runExamples {
     [self arrayExamples];
+    [self dateExamples];
 }
 
 - (void)arrayExamples {
@@ -47,6 +48,10 @@
     PO(usersInfo)
     
     PO([usersInfo mapToClass:[User class]])
+}
+
+- (void)dateExamples {
+    
 }
 
 @end
