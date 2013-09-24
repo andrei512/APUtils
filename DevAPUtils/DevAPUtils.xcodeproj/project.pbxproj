@@ -33,6 +33,7 @@
 		75E7A8DD17EB395A00CE90AF /* UITextField+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8CF17EB395A00CE90AF /* UITextField+APUtils.m */; };
 		75E7A8E617EB3FCA00CE90AF /* APUtilsFoundationExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8E517EB3FCA00CE90AF /* APUtilsFoundationExamples.m */; };
 		75E7A8E817EB431000CE90AF /* Users.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75E7A8E717EB431000CE90AF /* Users.plist */; };
+		75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */; };
 		EB72E8B17C114005BE57CF7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B818EBDF86456AB01E3CF2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		75E7A8E417EB3FCA00CE90AF /* APUtilsFoundationExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APUtilsFoundationExamples.h; sourceTree = "<group>"; };
 		75E7A8E517EB3FCA00CE90AF /* APUtilsFoundationExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APUtilsFoundationExamples.m; sourceTree = "<group>"; };
 		75E7A8E717EB431000CE90AF /* Users.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Users.plist; sourceTree = "<group>"; };
+		75E7A8EA17F19D5E00CE90AF /* NSData+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+APUtils.h"; sourceTree = "<group>"; };
+		75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+APUtils.m"; sourceTree = "<group>"; };
 		D752F7B7B5954238B8B9B597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				75E7A8AE17EB395A00CE90AF /* NSArray */,
+				75E7A8E917F19D4E00CE90AF /* NSData */,
 				75E7A8B117EB395A00CE90AF /* NSDate */,
 				75E7A8B417EB395A00CE90AF /* NSDictionary */,
 				75E7A8B717EB395A00CE90AF /* NSNumber */,
@@ -341,6 +345,15 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		75E7A8E917F19D4E00CE90AF /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				75E7A8EA17F19D5E00CE90AF /* NSData+APUtils.h */,
+				75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */,
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +488,7 @@
 				75E7A8DC17EB395A00CE90AF /* UIImage+APUtils.m in Sources */,
 				75E7A8DD17EB395A00CE90AF /* UITextField+APUtils.m in Sources */,
 				75E7A8E617EB3FCA00CE90AF /* APUtilsFoundationExamples.m in Sources */,
+				75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

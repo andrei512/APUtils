@@ -10,4 +10,9 @@
 
 - (NSMutableDictionary *)merge:(NSDictionary *)dict;
 
+#pragma mark - JSON
+
+- (NSString*) jsonString;
++ (NSDictionary*) dictionaryWithJSON:(NSString*)json;
+
 @end

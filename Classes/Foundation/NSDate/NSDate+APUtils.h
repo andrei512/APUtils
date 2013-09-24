@@ -8,6 +8,8 @@
 
 @interface NSDate (APUtils)
 
+#pragma mark - Time Intervals
+
 + (NSDictionary *)timeIntervalNamed:(NSString *)intervalName;
 
 + (NSDictionary *)timeIntervalWithBeginDate:(NSDate *)beginDate
@@ -29,5 +31,19 @@
 - (NSString *)formatedDate;
 
 - (NSString *)formatedDateWithFormat:(NSString *)dateFormat;
+
+#pragma mark - Time ago
+
+- (NSUInteger) daysAgo;
+- (NSUInteger) hoursAgo;
+- (NSUInteger) daysAgoAgainstMidnight;
+- (NSString *) stringDaysAgo;
+- (NSString *) stringDaysAgoAgainstMidnight:(BOOL)flag;
+
+#pragma mark - General
+
+- (NSUInteger)weekday;
+- (NSTimeInterval)unixTime;
+
 
 @end

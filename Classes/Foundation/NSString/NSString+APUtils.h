@@ -23,5 +23,25 @@ NSString *CapitalizeFirst(NSString *source);
 
 - (BOOL)matches:(NSString *)pattern;
 
+- (NSString *)stringByEscapingPercents;
+- (NSString *)stringByUnscapingPercents;
+
+- (NSString *)stringByBase64EncodingString;
+- (NSString *)stringByBase64DecodingString;
+- (NSData   *)dataByBase64DecodingString;
+
+- (NSString *)HMAC_SHA1SignatureWithKey:(NSString *)signingKey;
++ (NSString *)randomStringWithLength:(NSUInteger)length;
+
+- (NSData   *)UTF8Data;
 
 @end
+
+/**
+ *  get bool string
+ *
+ *  @param boolValue bool value
+ *
+ *  @return bool string, @"YES" or @"NO"
+ */
+FOUNDATION_EXPORT NSString* NSStringFromBOOL(BOOL boolValue);

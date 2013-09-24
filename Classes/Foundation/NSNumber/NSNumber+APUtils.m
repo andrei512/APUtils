@@ -33,4 +33,16 @@
     return [formatter stringForObjectValue:self];
 }
 
+- (NSDate *)dateValue {
+    return [NSDate dateWithTimeIntervalSince1970:[self doubleValue]];      // if self is nil, its doubleValue is 0.0
+}
+
++ (int)randomInt:(int)maxInt {
+    return arc4random() % maxInt;
+}
+
++ (BOOL)randomBool {
+    return arc4random() % 2 ? YES : NO;
+}
+
 @end
