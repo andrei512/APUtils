@@ -149,4 +149,20 @@
     return NSClassFromString(newClassname);
 }
 
+- (id)safePerform:(SEL)selector {
+    return [self safePerform:selector withObject:nil];
+}
+
+- (id)safePerform:(SEL)selector withObject:(id)object {
+    if ([self respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        return [self performSelector:selector withObject:object];
+#pragma clang diagnostic pop
+    } else {
+        return nil;
+    }
+}
+
+
 @end

@@ -29,6 +29,8 @@
 - (Class)classByAddingSuffix:(NSString *)suffix;
 + (Class)classByAddingSuffix:(NSString *)suffix;
 
+- (id)safePerform:(SEL)selector;
+- (id)safePerform:(SEL)selector withObject:(id)object;
 
 @end
 
