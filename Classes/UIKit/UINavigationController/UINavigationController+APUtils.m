@@ -1,61 +1,50 @@
 //
-// UINavigationController+Pilot.m
+//  UINavigationController+APUtils.m
+//  DevAPUtils
 //
-// Created by Pay on 13/3/21.
-// Copyright (c) 2013年 Octalord. The MIT License
+//  Created by Andrei Puni on 9/25/13.
+//  Copyright (c) 2013 Andrei Puni. All rights reserved.
 //
 
-#import "UINavigationController+Pilot.h"
+#import "UINavigationController+APUtils.h"
 
-@implementation UINavigationController (Pilot)
+@implementation UINavigationController (APUtils)
 
-- (NSArray *) viewControllersForClass:(Class)aClass
-{
+- (NSArray *)viewControllersForClass:(Class)aClass {
     NSMutableArray *controllers = [[NSMutableArray array] mutableCopy];
-
+    
     for (UIViewController *v in self.viewControllers) {
-
         if ([v isKindOfClass:aClass] == YES) {
-
             [controllers addObject:v];
         }
     }
-
-    NSArray *ary = [NSArray arrayWithArray:controllers];
-
-    [controllers release];
-
-    return ary;
+    
+    return [NSArray arrayWithArray:controllers];
 }
 
-- (UIViewController *) viewControllerForClass:(Class)aClass
-{
+- (UIViewController *) viewControllerForClass:(Class)aClass {
     for (UIViewController *v in self.viewControllers) {
-
         if ([v isKindOfClass:aClass] == YES) {
-
             return v;
         }
     }
-
+    
     return nil;
 }
 
-- (NSArray *) popToViewControllerClass:(Class)aClass animated:(BOOL)animated
-{
-
+- (NSArray *) popToViewControllerClass:(Class)aClass animated:(BOOL)animated {
     UIViewController *v = [self viewControllerForClass:aClass];
-
+    
     return [self popToViewController:v animated:animated];
 }
 
-- (UIViewController *) popThenPushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+- (UIViewController *) popThenPushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     UIViewController *v = [self popViewControllerAnimated:NO];
-
+    
     [self pushViewController:viewController animated:animated];
-
+    
     return v;
 }
+
 
 @end

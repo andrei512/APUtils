@@ -1,13 +1,14 @@
 //
-// UINavigationController+Pilot.h
+//  UINavigationController+APUtils.h
+//  DevAPUtils
 //
-// Created by Pay on 13/3/21.
-// Copyright (c) 2013年 Octalord. The MIT License
+//  Created by Andrei Puni on 9/25/13.
+//  Copyright (c) 2013 Andrei Puni. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationController (Pilot)
+@interface UINavigationController (APUtils)
 
 /**
  *  seek all the object is kind of aClass
@@ -30,5 +31,6 @@
  * http://stackoverflow.com/questions/410471/how-can-i-pop-a-view-from-a-uinavigationcontroller-and-replace-it-with-another-i
  */
 - (UIViewController *) popThenPushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+
 
 @end

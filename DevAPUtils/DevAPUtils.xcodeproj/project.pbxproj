@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7559B39E17F3449200E408FD /* UIView+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7559B39D17F3449200E408FD /* UIView+APUtils.m */; };
+		7559B3A017F3452600E408FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7559B39F17F3452600E408FD /* QuartzCore.framework */; };
+		7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */; };
 		75A9D62F17EB372D005A25B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D62E17EB372D005A25B8 /* UIKit.framework */; };
 		75A9D63117EB372D005A25B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63017EB372D005A25B8 /* Foundation.framework */; };
 		75A9D63317EB372D005A25B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63217EB372D005A25B8 /* CoreGraphics.framework */; };
@@ -39,6 +42,11 @@
 
 /* Begin PBXFileReference section */
 		41B818EBDF86456AB01E3CF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7559B39C17F3449200E408FD /* UIView+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+APUtils.h"; sourceTree = "<group>"; };
+		7559B39D17F3449200E408FD /* UIView+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+APUtils.m"; sourceTree = "<group>"; };
+		7559B39F17F3452600E408FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7559B3A217F3460200E408FD /* UINavigationController+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+APUtils.h"; sourceTree = "<group>"; };
+		7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+APUtils.m"; sourceTree = "<group>"; };
 		75A9D62B17EB372D005A25B8 /* DevAPUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAPUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A9D62E17EB372D005A25B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75A9D63017EB372D005A25B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7559B3A017F3452600E408FD /* QuartzCore.framework in Frameworks */,
 				75A9D62F17EB372D005A25B8 /* UIKit.framework in Frameworks */,
 				75A9D63117EB372D005A25B8 /* Foundation.framework in Frameworks */,
 				75A9D63317EB372D005A25B8 /* CoreGraphics.framework in Frameworks */,
@@ -105,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7559B3A117F345F200E408FD /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				7559B3A217F3460200E408FD /* UINavigationController+APUtils.h */,
+				7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
 		75A9D62217EB372D005A25B8 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +144,7 @@
 		75A9D62D17EB372D005A25B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7559B39F17F3452600E408FD /* QuartzCore.framework */,
 				75A9D62E17EB372D005A25B8 /* UIKit.framework */,
 				75A9D63017EB372D005A25B8 /* Foundation.framework */,
 				75A9D63217EB372D005A25B8 /* CoreGraphics.framework */,
@@ -264,6 +283,7 @@
 				75E7A8CD17EB395A00CE90AF /* UITextField */,
 				75E7A8D017EB395A00CE90AF /* UIView */,
 				75E7A8D117EB395A00CE90AF /* UIVIewController */,
+				7559B3A117F345F200E408FD /* UINavigationController */,
 				75E7A8E017EB3F4300CE90AF /* APUtils+UIKit.h */,
 			);
 			path = UIKit;
@@ -308,6 +328,8 @@
 		75E7A8D017EB395A00CE90AF /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				7559B39C17F3449200E408FD /* UIView+APUtils.h */,
+				7559B39D17F3449200E408FD /* UIView+APUtils.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -489,6 +511,8 @@
 				75E7A8DD17EB395A00CE90AF /* UITextField+APUtils.m in Sources */,
 				75E7A8E617EB3FCA00CE90AF /* APUtilsFoundationExamples.m in Sources */,
 				75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */,
+				7559B39E17F3449200E408FD /* UIView+APUtils.m in Sources */,
+				7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
