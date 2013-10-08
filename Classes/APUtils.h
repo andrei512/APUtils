@@ -6,6 +6,8 @@
  
 #import "APUtils+Foundation.h"
 
+extern void after(NSTimeInterval timeInterval, void(^block)(void));
+
 @interface APUtils : NSObject
 
 + (BOOL)canMakePhoneCalls;

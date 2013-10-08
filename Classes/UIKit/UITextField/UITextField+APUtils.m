@@ -5,13 +5,28 @@
 //
 
 #import "UITextField+APUtils.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-
 #import <objc/runtime.h>
-
 #define kStoreKey @"UITextField-text-store"
 
+const char *kTextFieldStoreIdentifier = "kTextFieldStoreIdentifier";
+
+static void *myContext = &myContext;
+
+@interface UITextField (APUtils_Private)
+
+@property (nonatomic, strong) NSString *storeIdentifier;
+
+@end
+
 @implementation UITextField (APUtils)
+
+- (void)setStoreIdentifier:(NSString *)storeIdentifier {
+    objc_setAssociatedObject(self, &kTextFieldStoreIdentifier, storeIdentifier, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)storeIdentifier {
+    return objc_getAssociatedObject(self, &kTextFieldStoreIdentifier);
+}
 
 + (void)clearStoredTexts {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -20,12 +35,14 @@
 }
 
 + (void)saveText:(NSString *)text forIdentifier:(NSString *)identifier {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *old = [userDefaults objectForKey:kStoreKey];
-    NSMutableDictionary *new = [NSMutableDictionary dictionaryWithDictionary:old];
-    new[identifier] = text ? text : @"";
-    [userDefaults setObject:new forKey:kStoreKey];
-    [userDefaults synchronize];
+    if (identifier != nil) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *old = [userDefaults objectForKey:kStoreKey];
+        NSMutableDictionary *new = [NSMutableDictionary dictionaryWithDictionary:old];
+        new[identifier] = text ? text : @"";
+        [userDefaults setObject:new forKey:kStoreKey];
+        [userDefaults synchronize];
+    }
 }
 
 - (void)persistAs:(NSString *)identifier {
@@ -34,9 +51,32 @@
     
     self.text = store[identifier];
     
-    [[RACAble(self.text) throttle:0.6] subscribeNext:^(id text) {
-        [[UITextField class] saveText:text forIdentifier:identifier];
-    }];
+    self.storeIdentifier = identifier;
+    // edit events
+    [self addTarget:self
+             action:@selector(textReallyDidChange:)
+   forControlEvents:UIControlEventEditingChanged];
+    
+    // when programmaticaly changing text
+    [self addObserver:self
+           forKeyPath:@"text"
+              options:NSKeyValueObservingOptionNew
+              context:nil];
+
+}
+
+- (void)textReallyDidChange:(UITextField *)editedTextField {
+    NSLog(@"%@", editedTextField.text);
+    [UITextField saveText:editedTextField.text
+            forIdentifier:editedTextField.storeIdentifier];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context {
+    [UITextField saveText:[change objectForKey:NSKeyValueChangeNewKey]
+            forIdentifier:((UITextField *)object).storeIdentifier];
+    
+    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 @end

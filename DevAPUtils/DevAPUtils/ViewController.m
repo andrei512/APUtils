@@ -7,23 +7,25 @@
 //
 
 #import "ViewController.h"
+#import "UITextField+APUtils.h"
+#import "APUtils.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.textField persistAs:@"the one and only"];
+    
+//    after(3, ^{
+//        self.textField.text = @"yolo!";
+//    });
 }
 
 @end

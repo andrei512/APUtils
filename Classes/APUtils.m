@@ -6,6 +6,12 @@
 
 #import "APUtils.h"
 
+void after(NSTimeInterval timeInterval, void(^block)(void)) {
+    double delayInSeconds = timeInterval;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), block);
+}
+
 @implementation APUtils
 
 + (BOOL)canMakePhoneCalls {
