@@ -8,6 +8,6 @@ git tag -d $1
 # push changes 
 git push --tags 
 # create new one
-git tag $1 -m "$1"
+git tag -a $1 -m "$1"
 # push tags
 git push --tags 
