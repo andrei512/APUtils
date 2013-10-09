@@ -12,7 +12,7 @@ typedef id(^APObjectBlock)(id object);
 @interface NSArray (APUtils)
 
 - (NSMutableArray *)filter:(APBoolBlock)block;
-- (NSMutableArray *)map:(APObjectBlock)block;
+- (NSMutableArray *)mapWithBlock:(APObjectBlock)block;
 - (NSMutableArray *)mapWithSelector:(SEL)selector;
 - (NSMutableArray *)mapToClass:(Class)objectClass;
 

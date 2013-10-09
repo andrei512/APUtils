@@ -38,7 +38,7 @@
         return nr.intValue % 2 == 1;
     }])
     
-    PO([array map:^id(NSNumber *number) {
+    PO([array mapWithBlock:^id(NSNumber *number) {
         return @(number.intValue * 2);
     }])
     

@@ -19,7 +19,7 @@
     return result;
 }
 
-- (NSMutableArray *)map:(APObjectBlock)block {
+- (NSMutableArray *)mapWithBlock:(APObjectBlock)block {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     for (id object in self) {
         [result addObject:block(object)];
@@ -39,7 +39,7 @@
 #pragma clang diagnostic pop
 
 - (NSMutableArray *)mapToClass:(Class)objectClass {
-    return [self map:^id(id object) {
+    return [self mapWithBlock:^id(id object) {
         return [objectClass createFrom:object];
     }];
 }
