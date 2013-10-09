@@ -9,6 +9,6 @@ git push --tags
 # push changes 
 git push 
 # create new one
-git tag $1 -m "$1"
+git tag $1 -m "$2"
 # push tags
 git push --tags 
