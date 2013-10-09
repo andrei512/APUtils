@@ -8,8 +8,9 @@
 
 
 #import "NSArray+APUtils.h"
+#import "NSDate+APUtils.h"
+#import "NSData+APUtils.h"
 #import "NSDictionary+APUtils.h"
-#import "NSDate/NSDate+APUtils.h"
 #import "NSNumber+APUtils.h"
 #import "NSObject+APUtils.h"
 #import "NSString+APUtils.h"
