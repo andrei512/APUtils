@@ -10,5 +10,7 @@
 #import "UIDevice+APUtils.h"
 #import "UIImage+APUtils.h"
 #import "UITextField+APUtils.h"
+#import "UIView+APUtils.h"
+#import "UINavigationController+APUtils.h"
 
 

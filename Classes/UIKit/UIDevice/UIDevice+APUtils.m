@@ -156,4 +156,39 @@ NSString* NSStringFromUIUserInterfaceIdiom(UIUserInterfaceIdiom idiom)
     }
 }
 
+#pragma mark - Versions
+
+static NSString *systemVersion = nil;
+
+- (NSInteger)majorSystemVersion {
+    if (!systemVersion.length) {
+        systemVersion = [self systemVersion];
+    }
+    return [systemVersion integerValue];
+}
+
+- (float)minorSystemVersion {
+    if (!systemVersion.length) {
+        systemVersion = [self systemVersion];
+    }
+    return [systemVersion floatValue] - [systemVersion integerValue];
+}
+
+- (BOOL)isIOS7OrLater {
+    return ([self majorSystemVersion] >= 7);
+}
+
+- (BOOL)isIOS7 {
+    return ([self majorSystemVersion] == 7);
+}
+
+- (BOOL)isIOS6OrEarlier {
+    return ([self majorSystemVersion] <= 6);
+}
+
+- (BOOL)isIOS6 {
+    return ([self majorSystemVersion] == 6);
+}
+
+
 @end

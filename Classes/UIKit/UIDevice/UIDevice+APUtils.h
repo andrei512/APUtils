@@ -29,22 +29,31 @@ typedef NS_ENUM (NSUInteger, UIDeviceResolution) {
  *
  *  @return orientation string
  */
-- (NSString *) orientationString;
+- (NSString *)orientationString;
 
 /**
  *  String text of UIDeviceBatteryState
  *
  *  @return battery state string
  */
-- (NSString *) batteryStateString;
+- (NSString *)batteryStateString;
 
 /**
  *  tring text of UIUserInterfaceIdiom
  *
  *  @return UserInterface idiom string
  */
-- (NSString *) userInterfaceIdiomString;
+- (NSString *)userInterfaceIdiomString;
 
 + (UIDeviceResolution)currentResolution;
+
+// Versions
+
+- (NSInteger)majorSystemVersion;
+- (float)minorSystemVersion;
+- (BOOL)isIOS7OrLater;
+- (BOOL)isIOS7;
+- (BOOL)isIOS6OrEarlier;
+- (BOOL)isIOS6;
 
 @end

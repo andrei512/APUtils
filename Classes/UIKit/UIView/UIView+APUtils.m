@@ -11,6 +11,20 @@
 
 @implementation UIView (APUtils)
 
+#pragma mark - Nibs
+
++ (instancetype)viewWithNibName:(NSString *)nibName {
+    UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
+    NSArray *objects = [nib instantiateWithOwner:nil options:nil];
+    for (NSObject *object in objects) {
+        if ([object isKindOfClass:[self class]]) {
+            return (UIView *)object;
+        }
+    }
+    return nil;
+}
+
+
 #pragma mark - Shortcuts for frame properties
 
 - (CGPoint)origin {
@@ -163,6 +177,20 @@
 
 #pragma mark - Rounded corners
 
+- (void)addBezierPathRoundedCornersWithRadius:(CGFloat)inRadius {
+    CAShapeLayer * shapeLayer = [CAShapeLayer layer];
+    //Setting the background color of the masking shape layer to clear color is key
+    //otherwise it would mask everything
+    shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:inRadius].CGPath;
+    
+    
+    
+    self.layer.masksToBounds = YES;
+    self.layer.mask = shapeLayer;
+    shapeLayer.frame = self.layer.bounds;
+}
+
 - (void)setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius {
 	CGRect rect = self.bounds;
     
@@ -181,7 +209,7 @@
 }
 
 - (void)setRoundedCornersWithRadius:(CGFloat)radius {
-    [self setRoundedCorners:UIRectCornerAllCorners radius:radius];
+    [self addBezierPathRoundedCornersWithRadius:radius];
 }
 
 @end

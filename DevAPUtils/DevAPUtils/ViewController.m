@@ -21,11 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.textField persistAs:@"the one and only"];
-    
-//    after(3, ^{
-//        self.textField.text = @"yolo!";
-//    });
+
 }
 
 @end
