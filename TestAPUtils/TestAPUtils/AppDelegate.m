@@ -7,43 +7,43 @@
 //
 
 #import "AppDelegate.h"
-#import <APUtils+Foundation.h>
-
+//#import <APUtils+Foundation.h>
+//
 #define PO(x) NSLog(@"%s = %@", #x, x);
 
 @implementation AppDelegate
 
-- (void)runExamples {
-    [self arrayExamples];
-    [self dateExamples];
-}
-
-- (void)arrayExamples {
-    NSArray *array = @[@1.1, @2.2, @3.3, @4.4, @5.5, @6.6, @7.7, @8.7, @9.9, @10];
-    
-    PO([array filter:^BOOL(NSNumber *nr) {
-        return nr.intValue % 2 == 1;
-    }])
-    
-    PO([array mapWithBlock:^id(NSNumber *number) {
-        return @(number.intValue * 2);
-    }])
-    
-    PO([array mapWithSelector:@selector(formatedString)])
-    
-    NSArray *usersInfo = [NSArray arrayFromPlistNamed:@"Users"];
-    PO(usersInfo)
-    
-    PO([usersInfo mapToClass:[User class]])
-}
-
-- (void)dateExamples {
-    
-}
+//- (void)runExamples {
+//    [self arrayExamples];
+//    [self dateExamples];
+//}
+//
+//- (void)arrayExamples {
+//    NSArray *array = @[@1.1, @2.2, @3.3, @4.4, @5.5, @6.6, @7.7, @8.7, @9.9, @10];
+//    
+//    PO([array filter:^BOOL(NSNumber *nr) {
+//        return nr.intValue % 2 == 1;
+//    }])
+//    
+//    PO([array mapWithBlock:^id(NSNumber *number) {
+//        return @(number.intValue * 2);
+//    }])
+//    
+//    PO([array mapWithSelector:@selector(formatedString)])
+//    
+//    NSArray *usersInfo = [NSArray arrayFromPlistNamed:@"Users"];
+//    PO(usersInfo)
+//    
+//    PO([usersInfo mapToClass:[User class]])
+//}
+//
+//- (void)dateExamples {
+//    
+//}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self runExamples];
+//    [self runExamples];
     // Override point for customization after application launch.
     return YES;
 }

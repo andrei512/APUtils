@@ -1,3 +1,4 @@
 platform :ios, '6.0'
 
-pod 'APUtils', :git => "https://github.com/andrei512/APUtils.git"
+# pod 'APUtils', :git => "https://github.com/andrei512/APUtils.git"
+pod 'ReactiveCocoa'

@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-APUtils.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MAObjCRuntime.xcscheme</key>
+		<key>Pods-ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6D329A555F064800919F69FE</key>
+		<key>4A640A6E96D247A29E020318</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B62CB869D01745CF90C3069D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC7781EE8AF54A0CBD7F0CCC</key>
+		<key>A3706B2C25154BB1A395D8F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

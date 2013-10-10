@@ -1,17 +1,15 @@
 PODS:
-  - APUtils (2.0.0):
-    - MAObjCRuntime
-  - MAObjCRuntime (0.0.1)
+  - ReactiveCocoa (2.1):
+    - ReactiveCocoa/Core
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/Core (2.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.1)
 
 DEPENDENCIES:
-  - APUtils (from `https://github.com/andrei512/APUtils.git`)
-
-EXTERNAL SOURCES:
-  APUtils:
-    :git: https://github.com/andrei512/APUtils.git
+  - ReactiveCocoa
 
 SPEC CHECKSUMS:
-  APUtils: deb054daecf21b23b20b062eed0004f2fa3e417c
-  MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
+  ReactiveCocoa: b686fa735c28c2dc7311fbd2f0895b4d4ae07360
 
-COCOAPODS: 0.26.1
+COCOAPODS: 0.26.2
