@@ -32,6 +32,7 @@
 - (id)safePerform:(SEL)selector;
 - (id)safePerform:(SEL)selector withObject:(id)object;
 
+
 @end
 
 

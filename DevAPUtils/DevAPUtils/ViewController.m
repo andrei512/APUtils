@@ -7,12 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "UITextField+APUtils.h"
 #import "APUtils.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 

@@ -10,6 +10,7 @@
 		7559B39E17F3449200E408FD /* UIView+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7559B39D17F3449200E408FD /* UIView+APUtils.m */; };
 		7559B3A017F3452600E408FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7559B39F17F3452600E408FD /* QuartzCore.framework */; };
 		7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */; };
+		755D282818100CDA0059E189 /* NSObject+Decorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 755D282718100CDA0059E189 /* NSObject+Decorators.m */; };
 		75A9D62F17EB372D005A25B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D62E17EB372D005A25B8 /* UIKit.framework */; };
 		75A9D63117EB372D005A25B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63017EB372D005A25B8 /* Foundation.framework */; };
 		75A9D63317EB372D005A25B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63217EB372D005A25B8 /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 		7559B39F17F3452600E408FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7559B3A217F3460200E408FD /* UINavigationController+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+APUtils.h"; sourceTree = "<group>"; };
 		7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+APUtils.m"; sourceTree = "<group>"; };
+		755D282618100CDA0059E189 /* NSObject+Decorators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Decorators.h"; sourceTree = "<group>"; };
+		755D282718100CDA0059E189 /* NSObject+Decorators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Decorators.m"; sourceTree = "<group>"; };
 		75A9D62B17EB372D005A25B8 /* DevAPUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAPUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A9D62E17EB372D005A25B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75A9D63017EB372D005A25B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -252,6 +255,8 @@
 			children = (
 				75E7A8BB17EB395A00CE90AF /* NSObject+APUtils.h */,
 				75E7A8BC17EB395A00CE90AF /* NSObject+APUtils.m */,
+				755D282618100CDA0059E189 /* NSObject+Decorators.h */,
+				755D282718100CDA0059E189 /* NSObject+Decorators.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				75E7A8D517EB395A00CE90AF /* NSDictionary+APUtils.m in Sources */,
 				75E7A8D617EB395A00CE90AF /* NSNumber+APUtils.m in Sources */,
 				75E7A8D717EB395A00CE90AF /* NSObject+APUtils.m in Sources */,
+				755D282818100CDA0059E189 /* NSObject+Decorators.m in Sources */,
 				75E7A8D817EB395A00CE90AF /* NSString+APUtils.m in Sources */,
 				75E7A8D917EB395A00CE90AF /* NSUserDefaults+APUtils.m in Sources */,
 				75E7A8DA17EB395A00CE90AF /* UIColor+APUtils.m in Sources */,

@@ -12,13 +12,47 @@
 
 // this should import APUtils+Foundation
 #import "APUtils.h"
+#import "NSObject+Decorators.h"
 
 #import "APUtilsFoundationExamples.h"
 
 @implementation AppDelegate
 
+- (void)doIt:(NSString *)className {
+    Class objectClass = NSClassFromString(className);
+    __block id decorator = nil;
+//    [APUtils benchmark:^{
+        decorator = [objectClass decorator];
+//    } name:[className stringByAppendingString:@" creation"]];
+    NSLog(@"%@ %d", className, (int)decorator);
+}
+
+- (void)crashDecorator {
+    NSMutableArray *threads = [NSMutableArray array];
+    NSArray *classNames = @[
+        @"NSObject", @"NSString", @"NSDictionary", @"UIView", @"NSData", @"NSDate",
+        @"NSNumber", @"NSUserDefaults", @"UIColor", @"UIDevice", @"UIImage",
+        @"UIImageView", @"UITableView", @"UITableViewCell", @"UITextField",
+        
+        @"NSObject", @"NSString", @"NSDictionary", @"UIView", @"NSData", @"NSDate",
+        @"NSNumber", @"NSUserDefaults", @"UIColor", @"UIDevice", @"UIImage",
+        @"UIImageView", @"UITableView", @"UITableViewCell", @"UITextField"
+    ];
+    
+    for (NSString *className in classNames) {
+        NSThread *thread = [[NSThread alloc] initWithTarget:self
+                                                   selector:@selector(doIt:)
+                                                     object:className];
+        [threads addObject:thread];
+    }
+    
+    [threads makeObjectsPerformSelector:@selector(start)];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self crashDecorator];
+    
 //    [[APUtilsFoundationExamples new] runExamples];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
