@@ -18,7 +18,6 @@
     // this is the class key hash
     static const char **stash = NULL;
     
-    
     static int cnt = 0;
     if (stash == NULL) {
         stash = (const char **)calloc(MAX_NR_CLASSES, sizeof(const char *));
@@ -43,8 +42,6 @@
         lock = [[NSLock alloc] init];
     }
     
-    [lock lock];
-    
     static id oracle = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -59,8 +56,6 @@
         decorator = [NSMutableDictionary dictionary];
         objc_setAssociatedObject(oracle, key, decorator, OBJC_ASSOCIATION_RETAIN);
     }
-
-    [lock unlock];
 
     return objc_getAssociatedObject(oracle, key);
 }

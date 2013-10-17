@@ -24,7 +24,7 @@
 //    [APUtils benchmark:^{
         decorator = [objectClass decorator];
 //    } name:[className stringByAppendingString:@" creation"]];
-    NSLog(@"%@ %d", className, (int)decorator);
+    NSLog(@"%@ %2d", className, (int)decorator % 97);
 }
 
 - (void)crashDecorator {
