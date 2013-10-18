@@ -222,6 +222,13 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 	return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
+- (APArrayStringBlock)split {
+    __block NSString *string = self;
+    return  ^ NSArray * (NSString *separator){
+        return [string componentsSeparatedByString:separator];
+    };
+}
+
 @end
 
 NSString *NSStringFromBOOL(BOOL boolValue) {

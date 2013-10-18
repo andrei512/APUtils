@@ -11,6 +11,7 @@
 		7559B3A017F3452600E408FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7559B39F17F3452600E408FD /* QuartzCore.framework */; };
 		7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */; };
 		755D282818100CDA0059E189 /* NSObject+Decorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 755D282718100CDA0059E189 /* NSObject+Decorators.m */; };
+		756D7B1A1811782800B59A73 /* NSObject+APRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D7B191811782800B59A73 /* NSObject+APRuntime.m */; };
 		75A9D62F17EB372D005A25B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D62E17EB372D005A25B8 /* UIKit.framework */; };
 		75A9D63117EB372D005A25B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63017EB372D005A25B8 /* Foundation.framework */; };
 		75A9D63317EB372D005A25B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63217EB372D005A25B8 /* CoreGraphics.framework */; };
@@ -50,6 +51,8 @@
 		7559B3A317F3460200E408FD /* UINavigationController+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+APUtils.m"; sourceTree = "<group>"; };
 		755D282618100CDA0059E189 /* NSObject+Decorators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Decorators.h"; sourceTree = "<group>"; };
 		755D282718100CDA0059E189 /* NSObject+Decorators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Decorators.m"; sourceTree = "<group>"; };
+		756D7B181811782800B59A73 /* NSObject+APRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+APRuntime.h"; sourceTree = "<group>"; };
+		756D7B191811782800B59A73 /* NSObject+APRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+APRuntime.m"; sourceTree = "<group>"; };
 		75A9D62B17EB372D005A25B8 /* DevAPUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAPUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A9D62E17EB372D005A25B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75A9D63017EB372D005A25B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -257,6 +260,8 @@
 				75E7A8BC17EB395A00CE90AF /* NSObject+APUtils.m */,
 				755D282618100CDA0059E189 /* NSObject+Decorators.h */,
 				755D282718100CDA0059E189 /* NSObject+Decorators.m */,
+				756D7B181811782800B59A73 /* NSObject+APRuntime.h */,
+				756D7B191811782800B59A73 /* NSObject+APRuntime.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */,
 				7559B39E17F3449200E408FD /* UIView+APUtils.m in Sources */,
 				7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */,
+				756D7B1A1811782800B59A73 /* NSObject+APRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

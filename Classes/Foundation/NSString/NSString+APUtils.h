@@ -14,7 +14,11 @@ NSString *CapitalizeFirst(NSString *source);
 #define kIntegerRegex @"^\\d*$"
 #define kEmailRegex @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
 
+typedef NSArray *(^APArrayStringBlock)(NSString *);
+
 @interface NSString (APUtils)
+
+@property (nonatomic, readonly) APArrayStringBlock split;
 
 - (NSString *)stringByRemovingSuffix:(NSString *)suffix;
 - (BOOL)containsString:(NSString *)substring;

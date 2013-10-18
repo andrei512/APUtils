@@ -12,6 +12,12 @@
 
 + (instancetype)decorator;
 
++ (NSMutableArray *)transformations;
++ (NSMutableArray *)mappings;
+
+//- (NSMutableArray *)transformations;
+//- (NSMutableArray *)mappings;
+
 // Object subscripting
 
 - (id)objectForKeyedSubscript:(id <NSCopying>)key;

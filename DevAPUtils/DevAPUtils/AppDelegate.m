@@ -15,16 +15,16 @@
 #import "NSObject+Decorators.h"
 
 #import "APUtilsFoundationExamples.h"
+#import "NSObject+APRuntime.h"
 
 @implementation AppDelegate
 
 - (void)doIt:(NSString *)className {
     Class objectClass = NSClassFromString(className);
-    __block id decorator = nil;
-//    [APUtils benchmark:^{
-        decorator = [objectClass decorator];
-//    } name:[className stringByAppendingString:@" creation"]];
+    id decorator = [objectClass decorator];
+    
     NSLog(@"%@ %2d", className, (int)decorator % 97);
+//    NSLog(@"%@ %@", [objectClass mappings], [objectClass transformations]);
 }
 
 - (void)crashDecorator {
@@ -51,7 +51,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self crashDecorator];
+    PO([[self class] propertyInfo])
+    
+//    [self crashDecorator];
     
 //    [[APUtilsFoundationExamples new] runExamples];
     

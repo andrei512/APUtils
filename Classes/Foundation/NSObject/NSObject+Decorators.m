@@ -11,6 +11,12 @@
 
 #define MAX_NR_CLASSES (1<<14) // 64 KB cache
 
+@interface NSObject(DecoratorsPrivate)
+
+@property (nonatomic, strong) NSMutableArray *__transf;
+@property (nonatomic, strong) NSMutableArray *__maping;
+
+@end
 
 @implementation NSObject (Decorators)
 
@@ -25,23 +31,40 @@
     
     const char *className = NSStringFromClass([self class]).UTF8String;
     
-    // see if the key was
+    // see if the key was in the stash
     for (int i = 0; i < cnt; ++i) {
         if (strcmp(className, stash[i]) == 0) {
             return stash[i];
         }
     }
     
-    stash[cnt++] = className;
+    // keep the key
+    int length = strlen(className);
+    stash[cnt] = (const char *)calloc(length, length);
+    cnt++;
+    
     return className;
 }
 
-+ (instancetype)decorator {
-    static NSLock *lock = nil;
-    if (lock == nil) {
-        lock = [[NSLock alloc] init];
++ (NSMutableArray *)transformations {
+    NSObject *d = (NSObject *)[self decorator];
+    if (d.__transf == nil) {
+        d.__transf = [NSMutableArray array];
     }
-    
+    return d.__transf;
+}
+
++ (NSMutableArray *)mappings {
+    NSObject *d = (NSObject *)[self decorator];
+    if (d.__maping == nil) {
+        d.__maping = [NSMutableArray array];
+    }
+    return d.__transf;
+}
+
+
++ (instancetype)decorator {
+    // All decorators are linked to the oracle
     static id oracle = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -50,14 +73,13 @@
     
     const char *key = [self classKey];
     
-    
     id decorator = objc_getAssociatedObject(oracle, key);
     if (decorator == nil) {
-        decorator = [NSMutableDictionary dictionary];
+        decorator = [self new];
         objc_setAssociatedObject(oracle, key, decorator, OBJC_ASSOCIATION_RETAIN);
     }
 
-    return objc_getAssociatedObject(oracle, key);
+    return decorator;
 }
 
 
