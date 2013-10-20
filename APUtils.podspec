@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/andrei512/APUtils.git", :tag => "2.0.0" }
   s.platform     = :ios, '5.0'
 
-  s.source_files = 'Classes/**/APUtils.{h,m}'
+  s.source_files = 'Classes/APUtils.{h,m}'
   s.requires_arc = true  
   
   s.dependency 'MAObjCRuntime'

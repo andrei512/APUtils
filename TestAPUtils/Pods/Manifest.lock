@@ -1,19 +1,11 @@
 PODS:
-  - APUtils (2.0.0):
-    - APUtils/Foundation
-    - APUtils/Foundation
-    - APUtils/UIKit
-    - MAObjCRuntime
   - APUtils/Foundation (2.0.0):
-    - APUtils/Foundation
-    - MAObjCRuntime
-  - APUtils/UIKit (2.0.0):
     - APUtils/Foundation
     - MAObjCRuntime
   - MAObjCRuntime (0.0.1)
 
 DEPENDENCIES:
-  - APUtils (from `https://github.com/andrei512/APUtils.git`)
+  - APUtils/Foundation (from `https://github.com/andrei512/APUtils.git`)
 
 EXTERNAL SOURCES:
   APUtils:

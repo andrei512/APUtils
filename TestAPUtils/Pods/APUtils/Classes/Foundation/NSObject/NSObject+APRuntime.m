@@ -31,11 +31,28 @@
     NSMutableDictionary *info = [NSMutableDictionary dictionary];
     
     NSDictionary *constants = @{
-                                @"R" : @{<#key#>: <#object, ...#>}
+        @"R" : @{@"association_type": @"read-only"},
+        @"C" : @{@"association_type": @"copy"},
+        @"&" : @{@"association_type": @"retain"},
+        @"W" : @{@"association_type" : @"weak"},
+        @"N" : @{@"non-atomic" : @YES},
+        @"D" : @{@"dynamic" : @YES}
     };
     
     for (NSString *attributeDescription in attributeDescriptions) {
-        
+        NSDictionary *i = constants[attributeDescription];
+        if (i != nil) {
+            [info addEntriesFromDictionary:i];
+        } else {
+            NSString *first = [attributeDescription substringToIndex:1];
+            NSString *rest = [attributeDescription substringFromIndex:1];
+            
+            if ([first isEqualToString:@"T"]) {
+                [info addEntriesFromDictionary:@{@"type" : rest}];
+            } else if ([first isEqualToString:@"V"]) {
+                [info addEntriesFromDictionary:@{@"ivar" : rest}];
+            }
+        }
     }
     
     return info;
@@ -53,11 +70,9 @@
         NSString *propertyName = [NSString stringWithFormat:@"%s", property_getName(property)];
         NSString *propertyAttributes = [NSString stringWithFormat:@"%s", property_getAttributes(property)];
 
-        NSMutableDictionary *info = [self attributesFromString:propertyAttributes];
+        NSDictionary *info = [self attributesFromString:propertyAttributes];
         
         propertyInfo[propertyName] = info;
-        
-        NSLog(@"%@ %@", propertyName, propertyAttributes);
     }
 
     return propertyInfo;
