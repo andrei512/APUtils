@@ -15,7 +15,7 @@
 #import "NSObject+Decorators.h"
 
 #import "APUtilsFoundationExamples.h"
-#import "NSObject+APRuntime.h"
+#import "APRuntimeExamples.h"
 
 @implementation AppDelegate
 
@@ -51,7 +51,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    PO([[self class] propertyInfo])
+    [APRuntimeExamples showExamples];
     
 //    [self crashDecorator];
     
