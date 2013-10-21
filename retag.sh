@@ -3,6 +3,7 @@
 # commit all changes
 git add . --all
 git ci -am "$2"
+git push origin
 # remove old tag
 git tag -d $1
 # push changes 
