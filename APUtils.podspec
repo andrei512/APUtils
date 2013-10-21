@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true  
   
   s.dependency 'MAObjCRuntime'
-  s.dependency 'APUtils/Foundation'
 
   s.subspec 'Foundation' do |ss|
     ss.source_files = 'Classes/Foundation/**/*.{h,m}'
