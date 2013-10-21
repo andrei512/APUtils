@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/andrei512/APUtils.git
 
 SPEC CHECKSUMS:
-  APUtils: 383b59e78ab99f169a69c7b418075d7fd22c5704
+  APUtils: 42ea1e666d1b710112a718adb7d75cd67c2c3283
   MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
 
 COCOAPODS: 0.26.2
