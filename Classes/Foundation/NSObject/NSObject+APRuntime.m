@@ -11,32 +11,31 @@
 #import "NSArray+APUtils.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (APRuntime)
-
-+ (NSDictionary *)attributesFromString:(NSString *)string {
-//    R    The property is read-only (readonly).
-//    C    The property is a copy of the value last assigned (copy).
-//    &    The property is a reference to the value last assigned (retain).
-//    N    The property is non-atomic (nonatomic).
-//    G<name> The property defines a custom getter selector name.
-//            The name follows the G (for example, GcustomGetter,).
-//    S<name> The property defines a custom setter selector name.
-//            The name follows the S (for example, ScustomSetter:,).
-//    D   The property is dynamic (@dynamic).
-//    W   The property is a weak reference (__weak).
-//    P   The property is eligible for garbage collection.
-//    T<encoding> Specifies the type using old-style encoding.
+static inline NSMutableDictionary * propertyAttributesFromString(NSString *string) {
+    //    R    The property is read-only (readonly).
+    //    C    The property is a copy of the value last assigned (copy).
+    //    &    The property is a reference to the value last assigned (retain).
+    //    N    The property is non-atomic (nonatomic).
+    //    G<name> The property defines a custom getter selector name.
+    //            The name follows the G (for example, GcustomGetter,).
+    //    S<name> The property defines a custom setter selector name.
+    //            The name follows the S (for example, ScustomSetter:,).
+    //    D   The property is dynamic (@dynamic).
+    //    W   The property is a weak reference (__weak).
+    //    P   The property is eligible for garbage collection.
+    //    T<encoding> Specifies the type using old-style encoding.
     
     NSArray *attributeDescriptions = string.split(@",");
-    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    // in all cases it will insert
+    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithCapacity:attributeDescriptions.count + 1];
     
-    NSDictionary *constants = @{
-        @"R" : @{@"association_type": @"read-only"},
-        @"C" : @{@"association_type": @"copy"},
-        @"&" : @{@"association_type": @"retain"},
-        @"W" : @{@"association_type" : @"weak"},
-        @"N" : @{@"non-atomic" : @YES},
-        @"D" : @{@"dynamic" : @YES}
+    const NSDictionary *constants = @{
+        @"R" : @{ @"association_type"   :   @"read-only" },
+        @"C" : @{ @"association_type"   :   @"copy" },
+        @"&" : @{ @"association_type"   :   @"retain" },
+        @"W" : @{ @"association_type"   :   @"weak" },
+        @"N" : @{ @"non-atomic"         :   @YES },
+        @"D" : @{ @"dynamic"            :   @YES },
     };
     
     for (NSString *attributeDescription in attributeDescriptions) {
@@ -48,9 +47,13 @@
             NSString *rest = [attributeDescription substringFromIndex:1];
             
             if ([first isEqualToString:@"T"]) {
-                [info addEntriesFromDictionary:@{@"type" : rest}];
+                info[@"raw_type"] = rest;
+                if ([rest matches:@"@\"\\w+\""]) {
+                    // ignoring @" and "
+                    info[@"class"] = [rest substringWithRange:NSMakeRange(2, rest.length - 3)];
+                }
             } else if ([first isEqualToString:@"V"]) {
-                [info addEntriesFromDictionary:@{@"ivar" : rest}];
+                info[@"ivar"] = rest;
             }
         }
     }
@@ -58,22 +61,32 @@
     return info;
 }
 
+@implementation NSObject (APRuntime)
+
 + (NSDictionary *)propertyInfo {
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-    
+    Class currentClass = [self class];
+
     NSMutableDictionary *propertyInfo = [NSMutableDictionary dictionary];
     
-    for (i = 0; i < outCount; i++) {
-        objc_property_t property = properties[i];
+    do {
+        unsigned int outCount, i;
+        objc_property_t *properties = class_copyPropertyList(currentClass, &outCount);
         
-        NSString *propertyName = [NSString stringWithFormat:@"%s", property_getName(property)];
-        NSString *propertyAttributes = [NSString stringWithFormat:@"%s", property_getAttributes(property)];
+        for (i = 0; i < outCount; i++) {
+            objc_property_t property = properties[i];
+            
+            NSString *propertyName = [NSString stringWithFormat:@"%s", property_getName(property)];
+            NSString *propertyAttributes = [NSString stringWithFormat:@"%s", property_getAttributes(property)];
 
-        NSDictionary *info = [self attributesFromString:propertyAttributes];
+            NSMutableDictionary *info = propertyAttributesFromString(propertyAttributes);
+            
+            info[@"name"] = propertyName;
+            
+            propertyInfo[propertyName] = info;
+        }
         
-        propertyInfo[propertyName] = info;
-    }
+        currentClass = [currentClass superclass];
+    } while ([currentClass superclass]);
 
     return propertyInfo;
 }

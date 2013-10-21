@@ -13,6 +13,7 @@
 		755D282818100CDA0059E189 /* NSObject+Decorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 755D282718100CDA0059E189 /* NSObject+Decorators.m */; };
 		756D7B1A1811782800B59A73 /* NSObject+APRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D7B191811782800B59A73 /* NSObject+APRuntime.m */; };
 		756D7B1D181404D200B59A73 /* APRuntimeExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D7B1C181404D200B59A73 /* APRuntimeExamples.m */; };
+		7590FDE2181599B9003FD905 /* NSObject+DuckTyping.m in Sources */ = {isa = PBXBuildFile; fileRef = 7590FDE1181599B9003FD905 /* NSObject+DuckTyping.m */; };
 		75A9D62F17EB372D005A25B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D62E17EB372D005A25B8 /* UIKit.framework */; };
 		75A9D63117EB372D005A25B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63017EB372D005A25B8 /* Foundation.framework */; };
 		75A9D63317EB372D005A25B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A9D63217EB372D005A25B8 /* CoreGraphics.framework */; };
@@ -56,6 +57,8 @@
 		756D7B191811782800B59A73 /* NSObject+APRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+APRuntime.m"; sourceTree = "<group>"; };
 		756D7B1B181404D200B59A73 /* APRuntimeExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRuntimeExamples.h; sourceTree = "<group>"; };
 		756D7B1C181404D200B59A73 /* APRuntimeExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRuntimeExamples.m; sourceTree = "<group>"; };
+		7590FDE0181599B9003FD905 /* NSObject+DuckTyping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DuckTyping.h"; sourceTree = "<group>"; };
+		7590FDE1181599B9003FD905 /* NSObject+DuckTyping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DuckTyping.m"; sourceTree = "<group>"; };
 		75A9D62B17EB372D005A25B8 /* DevAPUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAPUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A9D62E17EB372D005A25B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75A9D63017EB372D005A25B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -265,6 +268,8 @@
 				755D282718100CDA0059E189 /* NSObject+Decorators.m */,
 				756D7B181811782800B59A73 /* NSObject+APRuntime.h */,
 				756D7B191811782800B59A73 /* NSObject+APRuntime.m */,
+				7590FDE0181599B9003FD905 /* NSObject+DuckTyping.h */,
+				7590FDE1181599B9003FD905 /* NSObject+DuckTyping.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				7559B39E17F3449200E408FD /* UIView+APUtils.m in Sources */,
 				7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */,
 				756D7B1D181404D200B59A73 /* APRuntimeExamples.m in Sources */,
+				7590FDE2181599B9003FD905 /* NSObject+DuckTyping.m in Sources */,
 				756D7B1A1811782800B59A73 /* NSObject+APRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

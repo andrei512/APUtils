@@ -8,6 +8,9 @@
 
 #import "APRuntimeExamples.h"
 #import "NSObject+APRuntime.h"
+#import "NSObject+APUtils.h"
+
+#pragma mark - All Types
 
 // from https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101
 
@@ -60,14 +63,52 @@ union MoneyUnion { float alone; double down; };
 
 @end
 
+#pragma mark - Inheritance
+
+@interface APRuntimeTestFoo : NSObject
+
+@property (nonatomic, strong) NSString *stringFromFoo;
+
+@end
+
+@implementation APRuntimeTestFoo
+@end
+
+@interface APRuntimeTestBar : APRuntimeTestFoo
+
+@property (nonatomic, strong) NSString *stringFromBar;
+
+@end
+
+@implementation APRuntimeTestBar
+@end
+
+
 @implementation APRuntimeExamples
 
 + (void)showExamples {
     [self getPropertyInfo];
+    [self moreThanOneLevelOfInheritance];
+    [self loadJson];
 }
 
 + (void)getPropertyInfo {
     NSLog(@"APRuntimeExampleClass.propertyInfo = %@", [APRuntimeExampleClass propertyInfo]);
+}
+
++ (void)moreThanOneLevelOfInheritance  {
+    NSLog(@"APRuntimeTestBar.propertyInfo = %@", [APRuntimeTestBar propertyInfo]);
+}
+
++ (void)loadJson {
+    NSDictionary *jsonInfo = @{
+                               @"stringFromFoo" : @"fooString",
+                               @"stringFromBar" : @"barString",
+    };
+    
+    APRuntimeTestBar *bar = [APRuntimeTestBar fromJson:jsonInfo];
+    
+    NSLog(@"should be fooString barString -> %@ %@", bar.stringFromFoo, bar.stringFromBar);
 }
 
 @end

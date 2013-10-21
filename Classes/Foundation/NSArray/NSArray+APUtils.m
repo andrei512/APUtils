@@ -40,7 +40,7 @@
 
 - (NSMutableArray *)mapToClass:(Class)objectClass {
     return [self mapWithBlock:^id(id object) {
-        return [objectClass createFrom:object];
+        return [objectClass fromJson:object];
     }];
 }
 

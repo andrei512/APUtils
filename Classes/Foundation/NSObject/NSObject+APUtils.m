@@ -6,30 +6,27 @@
 
 #import "NSObject+APUtils.h"
 #import "NSString+APUtils.h"
-#import "MARTNSObject.h"
-#import "RTProperty.h"
 #import "APUtils.h"
 
 @implementation NSObject (Model)
 
-#define kPropertyName @"kPropertyName"
-
-- (NSArray *)properties {
-    NSMutableArray *properties = [NSMutableArray array];
+- (NSArray *)objectProperties {
+    NSDictionary *propertyInfo = [[self class] propertyInfo];
+    NSMutableArray *properties = [NSMutableArray arrayWithCapacity:propertyInfo.count];
     
-    Class class = self.rt_class;
-    do {
-        for (RTProperty *property in class.rt_properties) {
-            [properties addObject:[property name]];                    
+    for (NSString *propertyName in propertyInfo) {
+        NSDictionary *property = propertyInfo[propertyName];
+        if (property[@"class"] != nil) {
+            [properties addObject:property];
         }
-        class = [class superclass];
-    } while ([class superclass]);
+    }
     
     return properties;
 }
 
-- (id)loadFrom:(id)data {
+- (instancetype)fromJson:(id)data {
     // memoize the properties lists for each class
+    // To do: move this part on the class decorator
     __strong static NSMutableDictionary *propertiesDicts = nil;
     
     if (propertiesDicts == nil) {
@@ -39,11 +36,12 @@
     NSArray *properties = [propertiesDicts objectForKey:NSStringFromClass([self class])];
     
     if (properties == nil) {
-        properties = [self properties];
+        properties = [self objectProperties];
         [propertiesDicts setObject:properties forKey:NSStringFromClass([self class])];
     }
     
-    for (NSString *propertyName in properties) {
+    for (NSDictionary *propertyInfo in properties) {
+        NSString *propertyName = propertyInfo[@"name"];
         @try {
             id value = data[propertyName];
             if (value) {
@@ -75,23 +73,28 @@
     return self;
 }
 
-- (id)ashes {
-    return [self ashes:NO];
+- (NSDictionary *)asJson {
+    return [self _asJson:NO];
 }
 
-- (id)ashes:(BOOL)underscored {
+- (NSDictionary *)asUnserscoredJson {
+    return [self _asJson:YES];
+}
+
+- (NSDictionary *)_asJson:(BOOL)underscored {
     NSMutableDictionary *ashes = [NSMutableDictionary dictionary];
 
-    Class class = self.rt_class;
+    Class class = [self class];
     do {
-        for (RTProperty *property in class.rt_properties) {
-            if ([self valueForKey:[property name]] != nil) {
+        for (NSDictionary *propertyInfo in self.objectProperties) {
+            NSString *propertyName = propertyInfo[@"name"];
+            if ([self valueForKey:propertyName] != nil) {
                 if (underscored) { 
-                    [ashes setValue:[self valueForKey:[property name]] 
-                             forKey:CamelCaseToUnderscores([property name])];
+                    [ashes setValue:[self valueForKey:propertyName]
+                             forKey:CamelCaseToUnderscores(propertyName)];
                 } else {
-                    [ashes setValue:[self valueForKey:[property name]] 
-                             forKey:[property name]];
+                    [ashes setValue:[self valueForKey:propertyName]
+                             forKey:propertyName];
                 }
             }
         }
@@ -101,12 +104,18 @@
     return ashes;
 }
 
-+ (id)createFrom:(id)data {
++ (instancetype)fromJson:(id)data {
     id ret = [self new];
     
-    [ret loadFrom:data];
+    [ret fromJson:data];
     
     return ret;
+}
+
+#pragma mark - Class Derivation
+
++ (NSString *)className {
+    return NSStringFromClass(self.class);
 }
 
 - (NSString *)className {
@@ -138,7 +147,6 @@
     return NSClassFromString(newClassname);
 }
 
-
 - (Class)classByAddingSuffix:(NSString *)suffix {
     return [[self class] classByAddingSuffix:suffix];
 }
@@ -148,6 +156,8 @@
     
     return NSClassFromString(newClassname);
 }
+
+#pragma mark - Safe Perform
 
 - (id)safePerform:(SEL)selector {
     return [self safePerform:selector withObject:nil];
@@ -165,3 +175,5 @@
 }
 
 @end
+
+

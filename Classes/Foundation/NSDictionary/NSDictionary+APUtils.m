@@ -57,7 +57,7 @@
     return jsonString;
 }
 
-+ (NSDictionary *) dictionaryWithJSON:(NSString *)json {
++ (NSDictionary *)dictionaryWithJSON:(NSString *)json {
     NSError *error = nil;
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -71,5 +71,101 @@
     
     return jsonDict;
 }
+
+#pragma mark - Typing
+
+- (NSNumber *)numberForKey:(NSString *)key {
+    id v = self[key];
+
+    // return v.asNumber
+
+    // this is like ifNumber just inline
+    if ([v isKindOfClass:[NSNumber class]]) {
+        return (NSNumber *)v;
+    }
+
+    return nil;
+}
+
+- (NSString *)stringForKey:(NSString *)key {
+    id v = self[key];
+
+    // return v.asString
+
+    // this is like ifString just inline
+    if ([v isKindOfClass:[NSString class]]) {
+        return (NSString *)v;
+    }
+
+    return nil;
+}
+
+- (NSDate *)dateForKey:(NSString *)key {
+    id v = self[key];
+
+    // return v.asDate
+
+    // this is like ifDate just inline
+    if ([v isKindOfClass:[NSDate class]]) {
+        return (NSDate *)v;
+    }
+
+    return nil;
+}
+
+- (NSArray *)listForKey:(NSString *)key {
+    id v = self[key];
+
+    // return v.asList
+
+    // this is like ifList just inline
+    if ([v isKindOfClass:[NSArray class]]) {
+        return (NSArray *)v;
+    }
+
+    return nil;
+}
+
+- (NSArray *)arrayForKey:(NSString *)key {
+    id v = self[key];
+
+    // return v.asArray
+
+    // this is like ifArray just inline
+    if ([v isKindOfClass:[NSArray class]]) {
+        return (NSArray *)v;
+    }
+
+    return nil;
+}
+
+- (NSDictionary *)dictionaryForKey:(NSString *)key {
+    id v = self[key];
+    
+    // return v.asDictionary
+    
+    // this is like ifDictionary just inline
+    if ([v isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary *)v;
+    }
+    
+    return nil;
+}
+
+- (NSDictionary *)hashForKey:(NSString *)key {
+    id v = self[key];
+
+    // return v.asHash
+
+    // this is like ifHash just inline
+    if ([v isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary *)v;
+    }
+
+    return nil;
+}
+
+
+
 
 @end

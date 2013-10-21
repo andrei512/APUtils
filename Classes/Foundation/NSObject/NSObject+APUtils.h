@@ -8,17 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+
+#import "NSObject+APRuntime.h"
+#import "NSObject+Decorators.h"
+#import "NSObject+DuckTyping.h"
+
+
 @interface NSObject (Model)
 
-- (id)loadFrom:(id)data;
-- (id)ashes;
-- (id)ashes:(BOOL)underscored;
+// Json referes to Obj-c equivalent to JSON using NSArray, NSDictionary,
+// NSString, NSNumber and NSNull
++ (instancetype)fromJson:(id)data;
+- (instancetype)fromJson:(id)data;
 
-+ (id)createFrom:(id)data;
+- (NSDictionary *)asJson;
+- (NSDictionary *)asUnserscoredJson;
 
++ (NSString *)className;
 - (NSString *)className;
 
 - (NSString *)hashKey;
+
+#pragma mark - Class Derivation
 
 - (Class)classByRemovingSuffix:(NSString *)suffix;
 + (Class)classByRemovingSuffix:(NSString *)suffix;
