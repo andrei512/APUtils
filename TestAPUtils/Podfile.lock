@@ -1,18 +1,20 @@
 PODS:
   - APUtils/Foundation (2.0.0):
+    - MAObjCRuntime
+  - APUtils/UIKit (2.0.0):
     - APUtils/Foundation
     - MAObjCRuntime
   - MAObjCRuntime (0.0.1)
 
 DEPENDENCIES:
-  - APUtils/Foundation (from `https://github.com/andrei512/APUtils.git`)
+  - APUtils/UIKit (from `https://github.com/andrei512/APUtils.git`)
 
 EXTERNAL SOURCES:
   APUtils:
     :git: https://github.com/andrei512/APUtils.git
 
 SPEC CHECKSUMS:
-  APUtils: c9d65e763620087c4e92684888d268f61be92561
+  APUtils: 383b59e78ab99f169a69c7b418075d7fd22c5704
   MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
 
 COCOAPODS: 0.26.2
