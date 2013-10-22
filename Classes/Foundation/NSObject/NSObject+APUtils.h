@@ -13,13 +13,19 @@
 #import "NSObject+Decorators.h"
 #import "NSObject+DuckTyping.h"
 
+@protocol APJSONCustomLoading <NSObject>
+
+- (instancetype)customLoadJson:(NSDictionary *)data;
+
+@end
+
 
 @interface NSObject (Model)
 
 // Json referes to Obj-c equivalent to JSON using NSArray, NSDictionary,
 // NSString, NSNumber and NSNull
-+ (instancetype)fromJson:(id)data;
-- (instancetype)fromJson:(id)data;
++ (instancetype)fromJson:(NSDictionary *)data;
+- (instancetype)fromJson:(NSDictionary *)data;
 
 - (NSDictionary *)asJson;
 - (NSDictionary *)asUnserscoredJson;

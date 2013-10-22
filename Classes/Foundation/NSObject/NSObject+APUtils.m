@@ -24,7 +24,7 @@
     return properties;
 }
 
-- (instancetype)fromJson:(id)data {
+- (instancetype)fromJson:(NSDictionary *)data {
     // memoize the properties lists for each class
     // To do: move this part on the class decorator
     __strong static NSMutableDictionary *propertiesDicts = nil;
@@ -66,8 +66,8 @@
         }
     }
     
-    if ([self respondsToSelector:@selector(customLoadData:)]) {
-        [self performSelector:@selector(customLoadData:) withObject:data];
+    if ([self conformsToProtocol:@protocol(APJSONCustomLoading)]) {
+        [self safePerform:@selector(customLoadJson:) withObject:data];
     }
     
     return self;
@@ -104,7 +104,7 @@
     return ashes;
 }
 
-+ (instancetype)fromJson:(id)data {
++ (instancetype)fromJson:(NSDictionary *)data {
     id ret = [self new];
     
     [ret fromJson:data];
@@ -170,6 +170,13 @@
         return [self performSelector:selector withObject:object];
 #pragma clang diagnostic pop
     } else {
+#ifndef NS_BLOCK_ASSERTIONS
+        NSString *message =
+            [NSString stringWithFormat:@"%@ does not recognize selector %@",
+                                       self,
+                                       NSStringFromSelector(selector)];
+        NSAssert(false, message);
+#endif
         return nil;
     }
 }

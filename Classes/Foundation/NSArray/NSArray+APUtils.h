@@ -8,6 +8,7 @@
 
 typedef BOOL(^APBoolBlock)(id object);
 typedef id(^APObjectBlock)(id object);
+typedef NSString *(^APStringStringBlock)(NSString *string);
 
 @interface NSArray (APUtils)
 
@@ -18,4 +19,8 @@ typedef id(^APObjectBlock)(id object);
 
 + (NSArray *)arrayFromPlistNamed:(NSString *)name;
 
+- (APStringStringBlock)join;
+
 @end
+
+

@@ -49,5 +49,59 @@
     return [NSArray arrayWithContentsOfFile:path];
 }
 
+- (APStringStringBlock)join {
+    __block NSArray *list = self;
+    return ^ NSString * (NSString *delimiter) {
+        return [list componentsJoinedByString:delimiter];
+    };
+}
 
 @end
+
+
+//#pragma mark - Range
+//
+//@interface APRangeEnumerator : NSEnumerator
+//
+//@property int start, finish, step, i;
+//
+//+ (instancetype)rangeWithStart:(int)start finish:(int)finish;
+//+ (instancetype)rangeWithStart:(int)start finish:(int)finish step:(int)step;
+//
+//@end
+//
+//
+//@implementation APRangeEnumerator
+//
+//+ (instancetype)rangeWithStart:(int)start finish:(int)finish {
+//    return [self rangeWithStart:start finish:finish step:1];
+//}
+//
+//+ (instancetype)rangeWithStart:(int)start finish:(int)finish step:(int)step {
+//    APRangeEnumerator *enumerator = [APRangeEnumerator new];
+//    
+//    enumerator.start = start;
+//    enumerator.finish = finish;
+//    enumerator.step = step;
+//    enumerator.i = start;
+//    
+//    return enumerator;
+//}
+//
+//- (id)nextObject {
+//    return @(self.i);
+//}
+//
+//- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
+//                                  objects:(id __unsafe_unretained [])buffer
+//                                    count:(NSUInteger)len {
+//    
+//}
+//
+//- (NSArray *)allObjects {
+//    NSMutableArray *all = [NSMutableArray arrayWithCapacity:(self.finish - self.start + self.step) / self.step];
+//    for (int i = self.start; i < self.finish; )
+//}
+//
+//
+//@end

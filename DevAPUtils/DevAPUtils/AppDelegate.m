@@ -51,7 +51,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [APRuntimeExamples showExamples];
+    NSMutableArray *list = [NSMutableArray array];
+    for (int i = 0; i < 10; ++i) {
+        [list addObject:@(i)];
+    }
+    PO(list.join(@","))
+    PO(list.join(nil))
+    PO(list.join(@", "))
+    
+//    [APRuntimeExamples showExamples];
     
 //    [self crashDecorator];
     
