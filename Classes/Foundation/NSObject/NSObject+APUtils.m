@@ -16,7 +16,12 @@
     
     for (NSString *propertyName in propertyInfo) {
         NSDictionary *property = propertyInfo[propertyName];
-        if (property[@"class"] != nil) {
+        // raw_type starts with @ for all NSObject subclasses
+        // raw_type is @ for id type
+        // raw_type is d / i /... for primitive data-types
+        
+        // we need all objects + id
+        if ([property[@"raw_type"] hasPrefix:@"@"]) {
             [properties addObject:property];
         }
     }
