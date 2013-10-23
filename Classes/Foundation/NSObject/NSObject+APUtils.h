@@ -15,7 +15,7 @@
 
 @protocol APJSONCustomLoading <NSObject>
 
-- (instancetype)customLoadJson:(NSDictionary *)data;
+- (void)customLoadJson:(NSDictionary *)data;
 
 @end
 
