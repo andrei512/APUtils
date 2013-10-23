@@ -25,7 +25,7 @@ static inline NSMutableDictionary * propertyAttributesFromString(NSString *strin
     //    P   The property is eligible for garbage collection.
     //    T<encoding> Specifies the type using old-style encoding.
     
-    NSArray *attributeDescriptions = string.split(@",");
+    NSArray *attributeDescriptions = string.splitBlock(@",");
     // in all cases it will insert
     NSMutableDictionary *info = [NSMutableDictionary dictionaryWithCapacity:attributeDescriptions.count + 1];
     

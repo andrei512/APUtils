@@ -18,7 +18,7 @@ typedef NSArray *(^APArrayStringBlock)(NSString *);
 
 @interface NSString (APUtils)
 
-@property (nonatomic, readonly) APArrayStringBlock split;
+@property (nonatomic, readonly) APArrayStringBlock splitBlock;
 
 - (NSString *)stringByRemovingSuffix:(NSString *)suffix;
 - (BOOL)containsString:(NSString *)substring;
