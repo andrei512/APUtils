@@ -10,7 +10,7 @@
 
 const char *kTextFieldStoreIdentifier = "kTextFieldStoreIdentifier";
 
-static void *myContext = &myContext;
+static void *APUtilsUITextFieldContext = &APUtilsUITextFieldContext;
 
 @interface UITextField (APUtils_Private)
 
@@ -59,10 +59,10 @@ static void *myContext = &myContext;
     
     // when programmaticaly changing text
     [self addObserver:self
-           forKeyPath:@"text"
+           forKeyPath:NSStringFromSelector(@selector(text))
               options:NSKeyValueObservingOptionNew
-              context:nil];
-
+              context:APUtilsUITextFieldContext];
+    
 }
 
 - (void)textReallyDidChange:(UITextField *)editedTextField {
@@ -73,10 +73,12 @@ static void *myContext = &myContext;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary *)change context:(void *)context {
-    [UITextField saveText:[change objectForKey:NSKeyValueChangeNewKey]
-            forIdentifier:((UITextField *)object).storeIdentifier];
-    
-    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    if (context == APUtilsUITextFieldContext && [keyPath isEqualToString:NSStringFromSelector(@selector(text))]) {
+        [UITextField saveText:[change objectForKey:NSKeyValueChangeNewKey]
+                forIdentifier:((UITextField *)object).storeIdentifier];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end
