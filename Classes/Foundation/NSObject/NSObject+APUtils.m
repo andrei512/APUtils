@@ -169,17 +169,31 @@
 }
 
 - (id)safePerform:(SEL)selector withObject:(id)object {
+    NSParameterAssert(selector != NULL);
+    NSParameterAssert([self respondsToSelector:selector]);
+    
     if ([self respondsToSelector:selector]) {
+        NSMethodSignature* methodSig = [self methodSignatureForSelector:selector];
+        if(methodSig == nil) {
+            return nil;
+        }
+        
+        const char* retType = [methodSig methodReturnType];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        return [self performSelector:selector withObject:object];
+        if(strcmp(retType, @encode(void)) != 0) {
+            return [self performSelector:selector withObject:object];
+        } else {
+            [self performSelector:selector withObject:object];
+            return nil;
+        }
 #pragma clang diagnostic pop
     } else {
 #ifndef NS_BLOCK_ASSERTIONS
         NSString *message =
             [NSString stringWithFormat:@"%@ does not recognize selector %@",
-                                       self,
-                                       NSStringFromSelector(selector)];
+             self,
+             NSStringFromSelector(selector)];
         NSAssert(false, message);
 #endif
         return nil;
