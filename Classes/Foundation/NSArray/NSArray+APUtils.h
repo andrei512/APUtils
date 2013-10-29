@@ -12,7 +12,7 @@ typedef NSString *(^APStringStringBlock)(NSString *string);
 
 @interface NSArray (APUtils)
 
-- (NSMutableArray *)filter:(APBoolBlock)block;
+- (NSMutableArray *)filterWithBlock:(APBoolBlock)block;
 - (NSMutableArray *)mapWithBlock:(APObjectBlock)block;
 - (NSMutableArray *)mapWithSelector:(SEL)selector;
 - (NSMutableArray *)mapToClass:(Class)objectClass;

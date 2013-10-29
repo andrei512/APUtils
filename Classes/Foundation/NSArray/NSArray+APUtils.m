@@ -9,7 +9,7 @@
 
 @implementation NSArray (APUtils)
 
-- (NSMutableArray *)filter:(APBoolBlock)block {
+- (NSMutableArray *)filterWithBlock:(APBoolBlock)block {
     NSMutableArray *result = [NSMutableArray array];
     for (id object in self) {
         if (block(object)) {
