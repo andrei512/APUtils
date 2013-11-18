@@ -178,17 +178,19 @@
 #pragma mark - Rounded corners
 
 - (void)addBezierPathRoundedCornersWithRadius:(CGFloat)inRadius {
-    CAShapeLayer * shapeLayer = [CAShapeLayer layer];
-    //Setting the background color of the masking shape layer to clear color is key
-    //otherwise it would mask everything
-    shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
-    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:inRadius].CGPath;
-    
-    
-    
-    self.layer.masksToBounds = YES;
-    self.layer.mask = shapeLayer;
-    shapeLayer.frame = self.layer.bounds;
+    if (!self.layer.mask) {
+        CAShapeLayer * shapeLayer = [CAShapeLayer layer];
+        //Setting the background color of the masking shape layer to clear color is key
+        //otherwise it would mask everything
+        shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+        shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:inRadius].CGPath;
+        
+        
+        
+        self.layer.masksToBounds = YES;
+        self.layer.mask = shapeLayer;
+        shapeLayer.frame = self.layer.bounds;
+    }
 }
 
 - (void)setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius {
