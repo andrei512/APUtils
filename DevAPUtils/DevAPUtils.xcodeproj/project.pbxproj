@@ -42,6 +42,7 @@
 		75E7A8E817EB431000CE90AF /* Users.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75E7A8E717EB431000CE90AF /* Users.plist */; };
 		75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */; };
 		EB72E8B17C114005BE57CF7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B818EBDF86456AB01E3CF2 /* libPods.a */; };
+		DA6C0C2618464970001D65C5 /* NSDateFormatter+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6C0C2518464970001D65C5 /* NSDateFormatter+APUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,8 @@
 		75E7A8EA17F19D5E00CE90AF /* NSData+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+APUtils.h"; sourceTree = "<group>"; };
 		75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+APUtils.m"; sourceTree = "<group>"; };
 		D752F7B7B5954238B8B9B597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DA6C0C2418464970001D65C5 /* NSDateFormatter+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+APUtils.h"; sourceTree = "<group>"; };
+		DA6C0C2518464970001D65C5 /* NSDateFormatter+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+APUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,7 @@
 				75E7A8AE17EB395A00CE90AF /* NSArray */,
 				75E7A8E917F19D4E00CE90AF /* NSData */,
 				75E7A8B117EB395A00CE90AF /* NSDate */,
+				DA6C0C231846495F001D65C5 /* NSDateFormatter */,
 				75E7A8B417EB395A00CE90AF /* NSDictionary */,
 				75E7A8B717EB395A00CE90AF /* NSNumber */,
 				75E7A8BA17EB395A00CE90AF /* NSObject */,
@@ -396,6 +400,15 @@
 			path = NSData;
 			sourceTree = "<group>";
 		};
+		DA6C0C231846495F001D65C5 /* NSDateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				DA6C0C2418464970001D65C5 /* NSDateFormatter+APUtils.h */,
+				DA6C0C2518464970001D65C5 /* NSDateFormatter+APUtils.m */,
+			);
+			path = NSDateFormatter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -534,6 +547,7 @@
 				75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */,
 				7559B39E17F3449200E408FD /* UIView+APUtils.m in Sources */,
 				7559B3A417F3460200E408FD /* UINavigationController+APUtils.m in Sources */,
+				DA6C0C2618464970001D65C5 /* NSDateFormatter+APUtils.m in Sources */,
 				756D7B1D181404D200B59A73 /* APRuntimeExamples.m in Sources */,
 				7590FDE2181599B9003FD905 /* NSObject+DuckTyping.m in Sources */,
 				756D7B1A1811782800B59A73 /* NSObject+APRuntime.m in Sources */,
