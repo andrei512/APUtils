@@ -12,3 +12,7 @@ A collection of helpful categories for base obj-c classes and snippets I collect
 
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andrei512/aputils/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
