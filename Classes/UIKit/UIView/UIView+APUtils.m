@@ -214,4 +214,13 @@
     [self addBezierPathRoundedCornersWithRadius:radius];
 }
 
+#pragma mark - Autolayout
+
+- (void)animateConstraintsWithDuration:(NSTimeInterval)duration {
+    [UIView animateWithDuration:duration 
+        animations:^{
+            [self layoutIfNeeded];
+        }];
+}
+
 @end

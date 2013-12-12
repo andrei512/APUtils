@@ -55,4 +55,12 @@
 - (void)setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 - (void)setRoundedCornersWithRadius:(CGFloat)radius;
 
+
+/**
+ *  Animates AutoLayout changes (source: http://stackoverflow.com/questions/13296232/ios-how-does-one-animate-to-new-autolayout-constraint-height)
+ *
+ *  @param duration the duration of the animation
+ */
+- (void)animateConstraintsWithDuration:(NSTimeInterval)duration;
+
 @end
