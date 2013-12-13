@@ -21,7 +21,7 @@
 }
 
 - (NSString *)formatedStringWithCurrency:(NSString *)currency {
-    NSNumberFormatter *formatter = nil;
+    static NSNumberFormatter *formatter = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
         [formatter setCurrencyCode:currency ?: @"USD"];
