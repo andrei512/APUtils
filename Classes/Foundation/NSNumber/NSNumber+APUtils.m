@@ -24,12 +24,12 @@
     static NSNumberFormatter *formatter = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
-        [formatter setCurrencyCode:currency ?: @"USD"];
         [formatter setGroupingSeparator:@","];
         [formatter setDecimalSeparator:@"."];
         [formatter setMaximumFractionDigits:0];
         [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     }
+    [formatter setCurrencyCode:currency ?: @"USD"];
     return [formatter stringForObjectValue:self];
 }
 
