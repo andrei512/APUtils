@@ -30,6 +30,7 @@
         [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     }
     [formatter setCurrencyCode:currency ?: @"USD"];
+    [formatter setMaximumFractionDigits:0];
     return [formatter stringForObjectValue:self];
 }
 
