@@ -8,6 +8,7 @@
 #import "NSData+APUtils.h"
 #import <CommonCrypto/CommonHMAC.h>
 
+// code from: http://stackoverflow.com/questions/1918972/camelcase-to-underscores-and-back-in-objective-c
 NSString *CamelCaseToUnderscores(NSString *input) {
     NSMutableString *output = [NSMutableString string];
     NSCharacterSet *uppercase = [NSCharacterSet uppercaseLetterCharacterSet];
