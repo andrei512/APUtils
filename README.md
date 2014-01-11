@@ -3,12 +3,11 @@ APUtils 2.0 alpha [![Flattr this git repo](http://api.flattr.com/button/flattr-b
 
 A collection of helpful categories for base obj-c classes and snippets I collected in four years of iOS development.
 
-## Many thanks to:
-* [@tspop](https://github.com/tspop)
-* [@bpoplauschi](https://github.com/bpoplauschi)
-* [@stevestreza](https://github.com/stevestreza) - DerpKit
-* [@payliu](https://github.com/payliu) - OLCategoryHelper
-* [@acerbetti](https://github.com/acerbetti) - ACEToolKit
+Install using cocoapods:
+
+```ruby
+pod 'APUtils'
+```
 
 ## APUtils.h
 
@@ -186,6 +185,12 @@ A collection of helpful categories for base obj-c classes and snippets I collect
 
 ```
 
+## Many thanks to:
+* [@tspop](https://github.com/tspop)
+* [@bpoplauschi](https://github.com/bpoplauschi)
+* [@stevestreza](https://github.com/stevestreza) - DerpKit
+* [@payliu](https://github.com/payliu) - OLCategoryHelper
+* [@acerbetti](https://github.com/acerbetti) - ACEToolKit
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andrei512/aputils/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
