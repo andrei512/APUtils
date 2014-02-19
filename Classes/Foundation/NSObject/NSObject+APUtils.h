@@ -22,6 +22,10 @@
 
 @interface NSObject (Model)
 
+// use those methods to configure the way fromJson works. If you wan to prohibit a certain variant to be executed (to gain extra performance), just set it to NO
++ (void)configureFromJsonShouldUseUnderscores:(BOOL)inShouldUse;
++ (void)configureFromJsonShouldUseCapitalLetter:(BOOL)inShouldUse;
+
 // Json referes to Obj-c equivalent to JSON using NSArray, NSDictionary,
 // NSString, NSNumber and NSNull
 + (instancetype)fromJson:(NSDictionary *)data;

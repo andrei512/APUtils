@@ -8,7 +8,19 @@
 #import "NSString+APUtils.h"
 #import "APUtils.h"
 
+static BOOL kFromJsonShouldUseUnderscores = YES;
+static BOOL kFromJsonShouldUseCapitalLetter = YES;
+
+
 @implementation NSObject (Model)
+
++ (void)configureFromJsonShouldUseUnderscores:(BOOL)inShouldUse {
+    kFromJsonShouldUseUnderscores = inShouldUse;
+}
+
++ (void)configureFromJsonShouldUseCapitalLetter:(BOOL)inShouldUse {
+    kFromJsonShouldUseCapitalLetter = inShouldUse;
+}
 
 - (NSArray *)objectProperties {
     NSDictionary *propertyInfo = [[self class] propertyInfo];
@@ -30,7 +42,7 @@
 }
 
 - (instancetype)fromJson:(NSDictionary *)data {
-    // memoize the properties lists for each class
+    // memorize the properties lists for each class
     // To do: move this part on the class decorator
     __strong static NSMutableDictionary *propertiesDicts = nil;
     
@@ -41,8 +53,35 @@
     NSArray *properties = [propertiesDicts objectForKey:NSStringFromClass([self class])];
     
     if (properties == nil) {
-        properties = [self objectProperties];
-        [propertiesDicts setObject:properties forKey:NSStringFromClass([self class])];
+        // in order to move as fast as possible, generating once an array of all the properties with their variants (i.e. firstName, first_name, FirstName)
+        NSArray *rawProperties = [self objectProperties];
+        NSMutableArray *variantsProperties = [NSMutableArray array];
+        // now determine variants
+        
+        for (NSDictionary *propertyInfo in rawProperties) {
+            [variantsProperties addObject:propertyInfo];
+            
+            if (kFromJsonShouldUseUnderscores) {
+                NSMutableDictionary *variantPropertyInfo = [NSMutableDictionary dictionaryWithDictionary:propertyInfo];
+                variantPropertyInfo[@"name"] = CamelCaseToUnderscores(variantPropertyInfo[@"name"]);
+                variantPropertyInfo[@"originalName"] = propertyInfo[@"name"];
+                if (![variantPropertyInfo[@"name"] isEqualToString:propertyInfo[@"name"]]) {
+                    [variantsProperties addObject:[variantPropertyInfo copy]];
+                }
+            }
+            
+            if (kFromJsonShouldUseCapitalLetter) {
+                NSMutableDictionary *variantPropertyInfo = [NSMutableDictionary dictionaryWithDictionary:propertyInfo];
+                variantPropertyInfo[@"name"] = CapitalizeFirst(variantPropertyInfo[@"name"]);
+                variantPropertyInfo[@"originalName"] = propertyInfo[@"name"];
+                if (![variantPropertyInfo[@"name"] isEqualToString:propertyInfo[@"name"]]) {
+                    [variantsProperties addObject:[variantPropertyInfo copy]];
+                }
+            }
+        }
+        
+        [propertiesDicts setObject:[variantsProperties copy] forKey:NSStringFromClass([self class])];
+        properties = variantsProperties;
     }
     
     for (NSDictionary *propertyInfo in properties) {
@@ -50,20 +89,10 @@
         @try {
             id value = data[propertyName];
             if (value) {
+                NSString *correctPropertyName = propertyInfo[@"originalName"] ?: propertyName;
+                
                 [self setValue:value
-                        forKey:propertyName];
-            } else {
-                value = data[CamelCaseToUnderscores(propertyName)];
-                if (value) {
-                    [self setValue:value
-                            forKey:propertyName];
-                } else {
-                    value = data[CapitalizeFirst(propertyName)];
-                    if (value) {
-                        [self setValue:value
-                                forKey:propertyName];
-                    }
-                }
+                        forKey:correctPropertyName];
             }
         }
         @catch (NSException *exception) {
