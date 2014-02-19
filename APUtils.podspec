@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "APUtils"
-  s.version      = "2.0.0"
+  s.version      = "2.0.1"
   s.summary      = "Collection of helpful categories and magik one liners for iOS/Mac OS development."
   s.homepage     = "https://github.com/andrei512/APUtils"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "andrei512" => "puni.andrei23@gmail.com" }
-  s.source       = { :git => "https://github.com/andrei512/APUtils.git", :tag => "2.0.0" }
+  s.source       = { :git => "https://github.com/andrei512/APUtils.git", :tag => "#{s.version}" }
   s.platform     = :ios, '5.0'
 
   s.requires_arc = true  
