@@ -62,7 +62,10 @@ static void *APUtilsUITextFieldContext = &APUtilsUITextFieldContext;
            forKeyPath:NSStringFromSelector(@selector(text))
               options:NSKeyValueObservingOptionNew
               context:APUtilsUITextFieldContext];
-    
+}
+
+- (void)stopPersisting {
+    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(text)) context:APUtilsUITextFieldContext];
 }
 
 - (void)textReallyDidChange:(UITextField *)editedTextField {
