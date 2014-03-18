@@ -66,7 +66,6 @@ static void *myContext = &myContext;
 }
 
 - (void)textReallyDidChange:(UITextField *)editedTextField {
-    NSLog(@"%@", editedTextField.text);
     [UITextField saveText:editedTextField.text
             forIdentifier:editedTextField.storeIdentifier];
 }
