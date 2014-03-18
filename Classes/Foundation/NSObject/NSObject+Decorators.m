@@ -39,7 +39,7 @@
     }
     
     // keep the key
-    int length = strlen(className);
+    NSUInteger length = strlen(className);
     stash[cnt] = (const char *)calloc(length, length);
     cnt++;
     

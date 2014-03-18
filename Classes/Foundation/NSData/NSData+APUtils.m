@@ -10,10 +10,10 @@
 #import <CommonCrypto/CommonCryptor.h>
 
 NSUInteger Base64encode_len(NSUInteger len);
-int Base64encode(char * coded_dst, const char *plain_src, NSUInteger len_plain_src);
+NSInteger Base64encode(char * coded_dst, const char *plain_src, NSUInteger len_plain_src);
 
 NSUInteger Base64decode_len(const char * coded_src);
-int Base64decode(char * plain_dst, const char *coded_src);
+NSInteger Base64decode(char * plain_dst, const char *coded_src);
 
 static const char Base64EncodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
@@ -119,7 +119,7 @@ static const char Base64EncodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk
 -(NSString *)stringByBase64DecodingData{
 	const void *inBytes = [self bytes];
 	
-	int outLength = Base64decode_len(inBytes);
+	NSUInteger outLength = Base64decode_len(inBytes);
 	void *outBytes = malloc(outLength);
 	Base64decode(outBytes, inBytes);
 	
@@ -158,9 +158,9 @@ static const unsigned char Base64_pr2six[256] =
 
 NSUInteger Base64decode_len(const char *bufcoded)
 {
-    int nbytesdecoded;
+    NSInteger nbytesdecoded;
     register const unsigned char *bufin;
-    register int nprbytes;
+    register NSInteger nprbytes;
 	
     bufin = (const unsigned char *) bufcoded;
     while (Base64_pr2six[*(bufin++)] <= 63);
@@ -171,12 +171,12 @@ NSUInteger Base64decode_len(const char *bufcoded)
     return nbytesdecoded + 1;
 }
 
-int Base64decode(char *bufplain, const char *bufcoded)
+NSInteger Base64decode(char *bufplain, const char *bufcoded)
 {
-    int nbytesdecoded;
+    NSInteger nbytesdecoded;
     register const unsigned char *bufin;
     register unsigned char *bufout;
-    register int nprbytes;
+    register NSInteger nprbytes;
 	
     bufin = (const unsigned char *) bufcoded;
     while (Base64_pr2six[*(bufin++)] <= 63);
@@ -224,7 +224,7 @@ NSUInteger Base64encode_len(NSUInteger len)
     return ((len + 2) / 3 * 4) + 1;
 }
 
-int Base64encode(char *encoded, const char *string, NSUInteger len)
+NSInteger Base64encode(char *encoded, const char *string, NSUInteger len)
 {
     int i;
     char *p;

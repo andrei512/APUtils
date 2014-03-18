@@ -182,7 +182,7 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
             break;
             
         default:
-            text = [NSString stringWithFormat:@"%d days ago", daysAgo];
+            text = [NSString stringWithFormat:@"%lu days ago", (unsigned long)daysAgo];
     }
     
     return text;
