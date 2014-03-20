@@ -86,6 +86,7 @@ static inline NSMutableDictionary * propertyAttributesFromString(NSString *strin
         }
         
         currentClass = [currentClass superclass];
+        free(properties);
     } while ([currentClass superclass]);
 
     return propertyInfo;
