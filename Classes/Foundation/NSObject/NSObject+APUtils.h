@@ -13,12 +13,6 @@
 #import "NSObject+Decorators.h"
 #import "NSObject+DuckTyping.h"
 
-@protocol APJSONCustomLoading <NSObject>
-
-- (void)customLoadJson:(NSDictionary *)data;
-
-@end
-
 
 @interface NSObject (Model)
 

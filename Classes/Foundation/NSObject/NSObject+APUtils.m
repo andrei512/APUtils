@@ -7,6 +7,7 @@
 #import "NSObject+APUtils.h"
 #import "NSString+APUtils.h"
 #import "APUtils.h"
+#import "APJSONCustomLoading.h"
 
 static BOOL kFromJsonShouldUseUnderscores = YES;
 static BOOL kFromJsonShouldUseCapitalLetter = YES;

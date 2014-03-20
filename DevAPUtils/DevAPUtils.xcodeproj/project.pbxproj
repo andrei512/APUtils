@@ -109,6 +109,7 @@
 		75E7A8EA17F19D5E00CE90AF /* NSData+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+APUtils.h"; sourceTree = "<group>"; };
 		75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+APUtils.m"; sourceTree = "<group>"; };
 		D752F7B7B5954238B8B9B597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DA27DD1F18DB501800D85513 /* APJSONCustomLoading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APJSONCustomLoading.h; sourceTree = "<group>"; };
 		DA6C0C2418464970001D65C5 /* NSDateFormatter+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+APUtils.h"; sourceTree = "<group>"; };
 		DA6C0C2518464970001D65C5 /* NSDateFormatter+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+APUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +275,7 @@
 				756D7B191811782800B59A73 /* NSObject+APRuntime.m */,
 				7590FDE0181599B9003FD905 /* NSObject+DuckTyping.h */,
 				7590FDE1181599B9003FD905 /* NSObject+DuckTyping.m */,
+				DA27DD1F18DB501800D85513 /* APJSONCustomLoading.h */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
