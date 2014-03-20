@@ -35,6 +35,12 @@
  */
 + (BOOL)randomBool;
 
-
+/**
+ *  Returns the short description using 'k' and 'm' symbols.
+ *  i.e. 600.000 -> 600k; 1.500.000 -> 1.5m
+ *
+ *  @return string short description
+ */
+- (NSString *)shortDescription;
 
 @end

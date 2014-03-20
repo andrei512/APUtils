@@ -46,4 +46,23 @@
     return arc4random() % 2 ? YES : NO;
 }
 
+- (NSString *)shortDescription {
+    int intValue = self.intValue;
+    if (intValue < 1000) {
+        return [NSString stringWithFormat:@"%d", intValue];
+    } else if (intValue < 1000000) {
+        return [NSString stringWithFormat:@"%dk", intValue / 1000];
+    } else {
+        double inMillions = self.doubleValue / 1e6;
+        double afterTheDot = inMillions - ((int)inMillions);
+        
+        if (afterTheDot < 1e-7 ||
+            afterTheDot > 0.95) {
+            return [NSString stringWithFormat:@"%.0fm", inMillions];
+        } else {
+            return [NSString stringWithFormat:@"%.1fm", inMillions];
+        }
+    }
+}
+
 @end
