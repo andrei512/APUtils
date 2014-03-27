@@ -51,16 +51,16 @@
     if (intValue < 1000) {
         return [NSString stringWithFormat:@"%d", intValue];
     } else if (intValue < 1000000) {
-        return [NSString stringWithFormat:@"%dk", intValue / 1000];
+        return [NSString stringWithFormat:@"%dK", intValue / 1000];
     } else {
         double inMillions = self.doubleValue / 1e6;
         double afterTheDot = inMillions - ((int)inMillions);
         
         if (afterTheDot < 1e-7 ||
             afterTheDot > 0.95) {
-            return [NSString stringWithFormat:@"%.0fm", inMillions];
+            return [NSString stringWithFormat:@"%.0fM", inMillions];
         } else {
-            return [NSString stringWithFormat:@"%.1fm", inMillions];
+            return [NSString stringWithFormat:@"%.1fM", inMillions];
         }
     }
 }
