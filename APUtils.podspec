@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "APUtils"
-  s.version      = "2.0.2"
+  s.version      = "2.1.0"
   s.summary      = "Collection of helpful categories and magik one liners for iOS/Mac OS development."
   s.homepage     = "https://github.com/andrei512/APUtils"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
