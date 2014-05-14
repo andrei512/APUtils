@@ -8,9 +8,9 @@
 
 @interface NSNumber (APUtils)
 
-- (NSString *)formatedString;
+- (NSString *)formattedString;
 
-- (NSString *)formatedStringWithCurrency:(NSString *)currency;
+- (NSString *)formattedStringWithCurrency:(NSString *)currency;
 
 /**
  *  return a NSDate value base on unix time in seconds

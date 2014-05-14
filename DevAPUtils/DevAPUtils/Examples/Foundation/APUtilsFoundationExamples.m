@@ -42,7 +42,7 @@
         return @(number.intValue * 2);
     }])
     
-    PO([array mapWithSelector:@selector(formatedString)])
+    PO([array mapWithSelector:@selector(formattedString)])
     
     NSArray *usersInfo = [NSArray arrayFromPlistNamed:@"Users"];
     PO(usersInfo)

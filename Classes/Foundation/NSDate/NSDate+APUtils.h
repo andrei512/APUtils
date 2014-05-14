@@ -28,9 +28,9 @@
 
 #pragma mark - Date Formating
 
-- (NSString *)formatedDate;
+- (NSString *)formattedDate;
 
-- (NSString *)formatedDateWithFormat:(NSString *)dateFormat;
+- (NSString *)formattedDateWithFormat:(NSString *)dateFormat;
 
 #pragma mark - Time ago
 

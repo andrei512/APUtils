@@ -45,11 +45,11 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
     NSMutableDictionary *timeInterval = [NSMutableDictionary dictionaryWithCapacity:2];
     
     if (beginDate != nil) {
-        timeInterval[@"begin_date"] = beginDate.formatedDate;
+        timeInterval[@"begin_date"] = beginDate.formattedDate;
     }
     
     if (endDate != nil) {
-        timeInterval[@"end_date"] = endDate.formatedDate;
+        timeInterval[@"end_date"] = endDate.formattedDate;
     }
     
     return timeInterval;
@@ -121,11 +121,11 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 
 #pragma mark - Date Formating
 
-- (NSString *)formatedDate {
-    return [self formatedDateWithFormat:@"yyyy-MM-dd"];
+- (NSString *)formattedDate {
+    return [self formattedDateWithFormat:@"yyyy-MM-dd"];
 }
 
-- (NSString *)formatedDateWithFormat:(NSString *)dateFormat {
+- (NSString *)formattedDateWithFormat:(NSString *)dateFormat {
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
     [dateFormater setDateFormat:dateFormat];
     return [dateFormater stringFromDate:self];

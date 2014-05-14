@@ -8,7 +8,7 @@
 
 @implementation NSNumber (APUtils)
 
-- (NSString *)formatedString {
+- (NSString *)formattedString {
     static NSNumberFormatter *formatter = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
@@ -20,7 +20,7 @@
     return [formatter stringForObjectValue:self];
 }
 
-- (NSString *)formatedStringWithCurrency:(NSString *)currency {
+- (NSString *)formattedStringWithCurrency:(NSString *)currency {
     static NSNumberFormatter *formatter = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
