@@ -46,12 +46,17 @@ static BOOL kFromJsonShouldUseCapitalLetter = YES;
     // memorize the properties lists for each class
     // To do: move this part on the class decorator
     __strong static NSMutableDictionary *propertiesDicts = nil;
-    
-    if (propertiesDicts == nil) {
+    static dispatch_queue_t fromJSONQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         propertiesDicts = [NSMutableDictionary dictionary];
-    }
+        fromJSONQueue = dispatch_queue_create("com.point2homes.app.fromJSONQueue", DISPATCH_QUEUE_CONCURRENT);
+    });
     
-    NSArray *properties = [propertiesDicts objectForKey:NSStringFromClass([self class])];
+    __block NSArray *properties;
+    dispatch_sync(fromJSONQueue, ^{
+        properties = [propertiesDicts objectForKey:NSStringFromClass([self class])];
+    });
     
     if (properties == nil) {
         // in order to move as fast as possible, generating once an array of all the properties with their variants (i.e. firstName, first_name, FirstName)
@@ -81,7 +86,9 @@ static BOOL kFromJsonShouldUseCapitalLetter = YES;
             }
         }
         
-        [propertiesDicts setObject:[variantsProperties copy] forKey:NSStringFromClass([self class])];
+        dispatch_barrier_sync(fromJSONQueue, ^{
+            [propertiesDicts setObject:[variantsProperties copy] forKey:NSStringFromClass([self class])];
+        });
         properties = variantsProperties;
     }
     
