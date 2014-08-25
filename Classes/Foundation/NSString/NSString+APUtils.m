@@ -230,6 +230,16 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     };
 }
 
+- (NSNumber *)convertToNumber {
+    NSNumber *number = nil;
+    if ( ([self rangeOfString:@","].location != NSNotFound) || ([self rangeOfString:@"."].location != NSNotFound) ) {
+        number = @([self doubleValue]);
+    } else {
+        number = @([self longLongValue]);
+    }
+    return number;
+}
+
 @end
 
 NSString *NSStringFromBOOL(BOOL boolValue) {

@@ -12,6 +12,8 @@
 static BOOL kFromJsonShouldUseUnderscores = YES;
 static BOOL kFromJsonShouldUseCapitalLetter = YES;
 
+NSString * const APFromJsonTypesNotMatchingNotification = @"APFromJsonTypesNotMatchingNotification";
+
 
 @implementation NSObject (Model)
 
@@ -94,13 +96,40 @@ static BOOL kFromJsonShouldUseCapitalLetter = YES;
     
     for (NSDictionary *propertyInfo in properties) {
         NSString *propertyName = propertyInfo[@"name"];
+        NSString *propertyClassString = propertyInfo[@"class"];
+        Class propertyClass = NSClassFromString(propertyClassString);
         @try {
             id value = data[propertyName];
             if (value) {
                 NSString *correctPropertyName = propertyInfo[@"originalName"] ?: propertyName;
                 
-                [self setValue:value
-                        forKey:correctPropertyName];
+                // if we don't have a class, than it's most probably an id type, so we can just set it
+                if ([propertyClassString length] == 0) {
+                    [self setValue:value forKeyPath:correctPropertyName];
+                } else {
+                    // check the type
+                    if ([value isKindOfClass:propertyClass]) {
+                        [self setValue:value forKey:correctPropertyName];
+                    } else {
+                        // special handle string <-> number conversions
+                        if ( ([value isKindOfClass:[NSString class]]) && ([NSNumber class] == propertyClass) ) {
+                            [self setValue:[value convertToNumber] forKeyPath:correctPropertyName];
+                        } else if ( ([value isKindOfClass:[NSNumber class]]) && ([NSString class] == propertyClass) ) {
+                            [self setValue:[value description] forKeyPath:correctPropertyName];
+                        }  else {
+                            if ([value isKindOfClass:[NSDictionary class]] && ![propertyClassString hasPrefix:@"NS"]) {
+                                // most probably, we have a nested class (i.e. Location has a Viewport member which is set via `customLoadJson:`). In this case, we will not log an error
+                            } else {
+                                NSString *errorMessage = [NSString stringWithFormat:@"Error on NSObject(%@) fromJson - expected a different type (%@) that the one received, %@ (%@)", [self className], propertyClassString, value, [value className]];
+                                NSError *error = [NSError errorWithDomain:@"APUtils" code:-5001 userInfo:@{@"message" : errorMessage}];
+                                
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [[NSNotificationCenter defaultCenter] postNotificationName:APFromJsonTypesNotMatchingNotification object:error];
+                                });
+                            }
+                        }
+                    }
+                }
             }
         }
         @catch (NSException *exception) {

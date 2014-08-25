@@ -39,6 +39,8 @@ typedef NSArray *(^APArrayStringBlock)(NSString *);
 
 - (NSData   *)UTF8Data;
 
+- (NSNumber *)convertToNumber;
+
 @end
 
 /**

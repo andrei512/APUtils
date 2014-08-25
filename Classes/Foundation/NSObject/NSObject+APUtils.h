@@ -14,6 +14,9 @@
 #import "NSObject+DuckTyping.h"
 
 
+extern NSString * const APFromJsonTypesNotMatchingNotification; // posted when there is a type mismatch in fromJson
+                                                                // object property type differs from json value type
+
 @interface NSObject (Model)
 
 // use those methods to configure the way fromJson works. If you wan to prohibit a certain variant to be executed (to gain extra performance), just set it to NO
