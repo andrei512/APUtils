@@ -18,8 +18,14 @@
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
     NSDateFormatter *dateFormatter = threadDictionary[key];
     
-    if (dateFormatter == nil) {
+    if (dateFormatter == nil
+        || ![inDateFormat isEqualToString:dateFormatter.dateFormat]) { // if the format of the cached date formatter has changed (maybe due to a call to setFormat)
         dateFormatter = [[NSDateFormatter alloc] init];
+        
+        // See https://developer.apple.com/library/ios/qa/qa1480/_index.html. Also flagged by FauxPasApp.
+        NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        
         [dateFormatter setDateFormat:inDateFormat];
         
         threadDictionary[key] = dateFormatter;
