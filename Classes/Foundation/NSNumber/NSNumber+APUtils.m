@@ -22,15 +22,19 @@
 
 - (NSString *)formattedStringWithCurrency:(NSString *)currency {
     static NSNumberFormatter *formatter = nil;
+    static NSString *lastCurrencyCode = nil;
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];
         [formatter setGroupingSeparator:@","];
         [formatter setDecimalSeparator:@"."];
         [formatter setMaximumFractionDigits:0];
         [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [formatter setMaximumFractionDigits:0];
     }
-    [formatter setCurrencyCode:currency ?: @"USD"];
-    [formatter setMaximumFractionDigits:0];
+    if (!lastCurrencyCode || ![lastCurrencyCode isEqualToString:currency]) {
+        [formatter setCurrencyCode:currency ?: @"USD"];
+        lastCurrencyCode = currency;
+    }
     return [formatter stringForObjectValue:self];
 }
 
