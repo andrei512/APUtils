@@ -18,6 +18,14 @@ static void *APUtilsUITextFieldContext = &APUtilsUITextFieldContext;
 
 @end
 
+static dispatch_queue_t serialDispatchQueueForNSUserDefaults() {
+    static dispatch_queue_t sSerialDispatchQueueForNSUserDefaults = nil;
+    if (!sSerialDispatchQueueForNSUserDefaults) {
+        sSerialDispatchQueueForNSUserDefaults = dispatch_queue_create("com.aputils.SerialDispatchQueueForNSUserDefaults", DISPATCH_QUEUE_SERIAL);
+    }
+    return sSerialDispatchQueueForNSUserDefaults;
+}
+
 @implementation UITextField (APUtils)
 
 - (void)setStoreIdentifier:(NSString *)storeIdentifier {
@@ -29,39 +37,47 @@ static void *APUtilsUITextFieldContext = &APUtilsUITextFieldContext;
 }
 
 + (void)clearStoredTexts {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:@{} forKey:kStoreKey];
-    [userDefaults synchronize];
+    dispatch_async(serialDispatchQueueForNSUserDefaults(), ^{
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:@{} forKey:kStoreKey];
+        [userDefaults synchronize];
+    });
 }
 
 + (void)saveText:(NSString *)text forIdentifier:(NSString *)identifier {
     if (identifier != nil) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSDictionary *old = [userDefaults objectForKey:kStoreKey];
-        NSMutableDictionary *new = [NSMutableDictionary dictionaryWithDictionary:old];
-        new[identifier] = text ? text : @"";
-        [userDefaults setObject:new forKey:kStoreKey];
-        [userDefaults synchronize];
+        dispatch_async(serialDispatchQueueForNSUserDefaults(), ^{
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSDictionary *old = [userDefaults objectForKey:kStoreKey];
+            NSMutableDictionary *new = [NSMutableDictionary dictionaryWithDictionary:old];
+            new[identifier] = text ? text : @"";
+            [userDefaults setObject:new forKey:kStoreKey];
+            [userDefaults synchronize];
+        });
     }
 }
 
 - (void)persistAs:(NSString *)identifier {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *store = [userDefaults objectForKey:kStoreKey];
-    
-    self.text = store[identifier];
-    
-    self.storeIdentifier = identifier;
-    // edit events
-    [self addTarget:self
-             action:@selector(textReallyDidChange:)
-   forControlEvents:UIControlEventEditingChanged];
-    
-    // when programmaticaly changing text
-    [self addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(text))
-              options:NSKeyValueObservingOptionNew
-              context:APUtilsUITextFieldContext];
+    dispatch_async(serialDispatchQueueForNSUserDefaults(), ^{
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *store = [userDefaults objectForKey:kStoreKey];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.text = store[identifier];
+            
+            self.storeIdentifier = identifier;
+            // edit events
+            [self addTarget:self
+                     action:@selector(textReallyDidChange:)
+           forControlEvents:UIControlEventEditingChanged];
+            
+            // when programmaticaly changing text
+            [self addObserver:self
+                   forKeyPath:NSStringFromSelector(@selector(text))
+                      options:NSKeyValueObservingOptionNew
+                      context:APUtilsUITextFieldContext];
+        });
+    });
 }
 
 - (void)stopPersisting {
