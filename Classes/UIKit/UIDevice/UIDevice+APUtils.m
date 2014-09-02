@@ -174,6 +174,14 @@ static NSString *systemVersion = nil;
     return [systemVersion floatValue] - [systemVersion integerValue];
 }
 
+- (BOOL)isIOS8OrLater {
+    return ([self majorSystemVersion] >= 8);
+}
+
+- (BOOL)isIOS8 {
+    return ([self majorSystemVersion] == 8);
+}
+
 - (BOOL)isIOS7OrLater {
     return ([self majorSystemVersion] >= 7);
 }
