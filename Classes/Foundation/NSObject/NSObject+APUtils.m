@@ -52,7 +52,7 @@ NSString * const APFromJsonTypesNotMatchingNotification = @"APFromJsonTypesNotMa
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         propertiesDicts = [NSMutableDictionary dictionary];
-        fromJSONQueue = dispatch_queue_create("com.point2homes.app.fromJSONQueue", DISPATCH_QUEUE_CONCURRENT);
+        fromJSONQueue = dispatch_queue_create("com.aputils.fromJSONQueue", DISPATCH_QUEUE_CONCURRENT);
     });
     
     __block NSArray *properties;
