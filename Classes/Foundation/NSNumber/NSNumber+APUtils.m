@@ -29,10 +29,10 @@
         [formatter setDecimalSeparator:@"."];
         [formatter setMaximumFractionDigits:0];
         [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [formatter setMaximumFractionDigits:0];
     }
     if (!lastCurrencyCode || ![lastCurrencyCode isEqualToString:currency]) {
         [formatter setCurrencyCode:currency ?: @"USD"];
+        [formatter setMaximumFractionDigits:0];
         lastCurrencyCode = currency;
     }
     return [formatter stringForObjectValue:self];
