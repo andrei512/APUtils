@@ -93,12 +93,13 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
                                     NSYearCalendarUnit |
                                     NSWeekdayCalendarUnit |
                                     NSYearForWeekOfYearCalendarUnit |
+                                    NSWeekOfYearCalendarUnit |
                                     NSWeekCalendarUnit
                                           fromDate:self];
     
     if (weekdayNumber > 7) {
         weekdayNumber -= 7;
-        [components setWeek:components.week + 1];
+        [components setWeekOfYear:components.weekOfYear + 1];
     }
     
     [components setWeekday:weekdayNumber];

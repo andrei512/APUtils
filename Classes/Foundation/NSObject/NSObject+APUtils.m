@@ -106,7 +106,7 @@ NSString * const APFromJsonTypesNotMatchingNotification = @"APFromJsonTypesNotMa
                 // if we don't have a class, than it's most probably an id type, so we can just set it
                 if ([propertyClassString length] == 0) {
                     [self setValue:value forKeyPath:correctPropertyName];
-                } else {
+                } else if (propertyInfo[@"ivar"]) {
                     // check the type
                     if ([value isKindOfClass:propertyClass]) {
                         [self setValue:value forKey:correctPropertyName];
@@ -158,6 +158,10 @@ NSString * const APFromJsonTypesNotMatchingNotification = @"APFromJsonTypesNotMa
     Class class = [self class];
     do {
         for (NSDictionary *propertyInfo in self.objectProperties) {
+            if (!propertyInfo[@"ivar"]) {
+                continue;
+            }
+            
             NSString *propertyName = propertyInfo[@"name"];
             if ([self valueForKey:propertyName] != nil) {
                 if (underscored) { 
