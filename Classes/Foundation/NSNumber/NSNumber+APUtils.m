@@ -21,21 +21,27 @@
 }
 
 - (NSString *)formattedStringWithCurrency:(NSString *)currency {
-    static NSNumberFormatter *formatter = nil;
-    static NSString *lastCurrencyCode = nil;
-    if (formatter == nil) {
-        formatter = [[NSNumberFormatter alloc] init];
-        [formatter setGroupingSeparator:@","];
-        [formatter setDecimalSeparator:@"."];
-        [formatter setMaximumFractionDigits:0];
-        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    if (!currency) {
+        currency = @"USD";
     }
-    if (!lastCurrencyCode || ![lastCurrencyCode isEqualToString:currency]) {
-        [formatter setCurrencyCode:currency ?: @"USD"];
-        [formatter setMaximumFractionDigits:0];
-        lastCurrencyCode = currency;
+    
+    NSString *key = [@"NSNumberFormatterWithCurrency." stringByAppendingString:currency];
+    
+    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    NSNumberFormatter *numberFormatter = threadDictionary[key];
+    
+    if (!numberFormatter || ![currency isEqualToString:numberFormatter.currencyCode]) { // if the currency code of the cached number formatter has changed (maybe due to an explicit call to setCurrencyCode)
+        numberFormatter = [[NSNumberFormatter  alloc] init];
+        [numberFormatter setGroupingSeparator:@","];
+        [numberFormatter setDecimalSeparator:@"."];
+        [numberFormatter setMaximumFractionDigits:0];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setCurrencyCode:currency];
+        
+        threadDictionary[key] = numberFormatter;
     }
-    return [formatter stringForObjectValue:self];
+    
+    return [numberFormatter stringForObjectValue:self];
 }
 
 - (NSDate *)dateValue {
