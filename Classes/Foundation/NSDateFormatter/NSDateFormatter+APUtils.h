@@ -21,4 +21,16 @@
  */
 + (NSDateFormatter *)threadSafeInstanceWithFormat:(NSString *)inDateFormat;
 
+/**
+ *  Use this method to get a safe instance of NSDateFormatter. Necesarry since NSDateFormatter is not thread safe and is less performant if recreated compared to being reused.
+ *
+ *
+ *  @param inDateStyle the date style
+ *  @param inTimeStyle the time style
+ *  @param inLocale the locale
+ *
+ *  @return the instance of NSDateFormatter
+ */
++ (NSDateFormatter *)threadSafeInstanceWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle locale:(NSLocale *)locale;
+
 @end

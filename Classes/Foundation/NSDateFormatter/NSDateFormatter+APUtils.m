@@ -34,4 +34,26 @@
     return dateFormatter;
 }
 
++ (NSDateFormatter *)threadSafeInstanceWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle locale:(NSLocale *)locale {
+    NSParameterAssert(locale);
+    
+    NSString *key = [@"NSDateFormatter." stringByAppendingString:[NSString stringWithFormat:@"%ld.%ld", dateStyle, timeStyle]];
+    
+    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    NSDateFormatter *dateFormatter = threadDictionary[key];
+    
+    if (dateFormatter == nil
+        || !(dateFormatter.dateStyle == dateStyle && dateFormatter.timeStyle == timeStyle && [dateFormatter.locale isEqual:locale])) { // if the cached date formatter has changed
+        dateFormatter = [NSDateFormatter new];
+        
+        [dateFormatter setDateStyle:dateStyle];
+        [dateFormatter setTimeStyle:timeStyle];
+        [dateFormatter setLocale:locale];
+        
+        threadDictionary[key] = dateFormatter;
+    }
+    
+    return dateFormatter;
+}
+
 @end
