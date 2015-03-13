@@ -41,8 +41,9 @@
 		75E7A8E617EB3FCA00CE90AF /* APUtilsFoundationExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8E517EB3FCA00CE90AF /* APUtilsFoundationExamples.m */; };
 		75E7A8E817EB431000CE90AF /* Users.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75E7A8E717EB431000CE90AF /* Users.plist */; };
 		75E7A8EC17F19D5E00CE90AF /* NSData+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */; };
-		EB72E8B17C114005BE57CF7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B818EBDF86456AB01E3CF2 /* libPods.a */; };
+		DA4C5DB11AB335F4004BB5C6 /* NSNumberFormatter+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4C5DB01AB335F4004BB5C6 /* NSNumberFormatter+APUtils.m */; };
 		DA6C0C2618464970001D65C5 /* NSDateFormatter+APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6C0C2518464970001D65C5 /* NSDateFormatter+APUtils.m */; };
+		EB72E8B17C114005BE57CF7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B818EBDF86456AB01E3CF2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		75E7A8EB17F19D5E00CE90AF /* NSData+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+APUtils.m"; sourceTree = "<group>"; };
 		D752F7B7B5954238B8B9B597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DA27DD1F18DB501800D85513 /* APJSONCustomLoading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APJSONCustomLoading.h; sourceTree = "<group>"; };
+		DA4C5DAF1AB335F4004BB5C6 /* NSNumberFormatter+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumberFormatter+APUtils.h"; sourceTree = "<group>"; };
+		DA4C5DB01AB335F4004BB5C6 /* NSNumberFormatter+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumberFormatter+APUtils.m"; sourceTree = "<group>"; };
 		DA6C0C2418464970001D65C5 /* NSDateFormatter+APUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+APUtils.h"; sourceTree = "<group>"; };
 		DA6C0C2518464970001D65C5 /* NSDateFormatter+APUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+APUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +223,7 @@
 				DA6C0C231846495F001D65C5 /* NSDateFormatter */,
 				75E7A8B417EB395A00CE90AF /* NSDictionary */,
 				75E7A8B717EB395A00CE90AF /* NSNumber */,
+				DA4C5DAE1AB335F4004BB5C6 /* NSNumberFormatter */,
 				75E7A8BA17EB395A00CE90AF /* NSObject */,
 				75E7A8BD17EB395A00CE90AF /* NSString */,
 				75E7A8C017EB395A00CE90AF /* NSUserDefaults */,
@@ -402,6 +406,15 @@
 			path = NSData;
 			sourceTree = "<group>";
 		};
+		DA4C5DAE1AB335F4004BB5C6 /* NSNumberFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				DA4C5DAF1AB335F4004BB5C6 /* NSNumberFormatter+APUtils.h */,
+				DA4C5DB01AB335F4004BB5C6 /* NSNumberFormatter+APUtils.m */,
+			);
+			path = NSNumberFormatter;
+			sourceTree = "<group>";
+		};
 		DA6C0C231846495F001D65C5 /* NSDateFormatter */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4C5DB11AB335F4004BB5C6 /* NSNumberFormatter+APUtils.m in Sources */,
 				75A9D63B17EB372D005A25B8 /* main.m in Sources */,
 				75A9D63F17EB372D005A25B8 /* AppDelegate.m in Sources */,
 				75A9D64817EB372D005A25B8 /* ViewController.m in Sources */,
