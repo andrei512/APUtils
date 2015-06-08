@@ -37,7 +37,7 @@
 + (NSDateFormatter *)threadSafeInstanceWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle locale:(NSLocale *)locale {
     NSParameterAssert(locale);
     
-    NSString *key = [@"NSDateFormatter." stringByAppendingString:[NSString stringWithFormat:@"%ld.%ld", dateStyle, timeStyle]];
+    NSString *key = [@"NSDateFormatter." stringByAppendingString:[NSString stringWithFormat:@"%ld.%ld", (long)dateStyle, (long)timeStyle]];
     
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
     NSDateFormatter *dateFormatter = threadDictionary[key];

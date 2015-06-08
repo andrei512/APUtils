@@ -11,7 +11,7 @@
 @implementation NSNumberFormatter (APUtils)
 
 + (NSNumberFormatter *)threadSafeInstanceWithStyle:(NSNumberFormatterStyle)numberStyle behavior:(NSNumberFormatterBehavior)behavior {
-    NSString *key = [@"NSNumberFormatter." stringByAppendingString:[NSString stringWithFormat:@"%lu.%lu", numberStyle, behavior]];
+    NSString *key = [@"NSNumberFormatter." stringByAppendingString:[NSString stringWithFormat:@"%lu.%lu", (long)numberStyle, (long)behavior]];
     
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
 
