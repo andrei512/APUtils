@@ -55,7 +55,6 @@ typedef NS_ENUM (NSUInteger, UIDeviceResolution) {
 - (BOOL)isIOS8OrLater;
 - (BOOL)isIOS7;
 - (BOOL)isIOS7OrLater;
-- (BOOL)isIOS7;
 - (BOOL)isIOS6OrEarlier;
 - (BOOL)isIOS6;
 
