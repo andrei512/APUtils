@@ -12,7 +12,10 @@ NSString *CapitalizeFirst(NSString *source);
 
 #define kNumberRegex @"^(\\d+(\\.\\d*)?)?$"
 #define kIntegerRegex @"^\\d*$"
-#define kEmailRegex @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+#define kEmailRegex @"^[ ]*[A-Za-z0-9][A-Za-z0-9\\._%&+\\-'*|]*@[A-Za-z0-9\\._&+\\-]+\\.[A-Za-z]{2,4}[ ]*$"
+#define kNameForUserRegistrationRegex @"^[a-zA-Z][a-zA-Z'&-]*[ ]+[a-zA-Z'&-]{1,}[ ]*"
+#define kPasswordForUserRegistrationRegex @"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{5,80}$"
+#define kPhoneNumberRegex @"^[^0-9]*[0-9]{3}[^0-9]*[0-9]{3}[^0-9]*[0-9]{4}[^0-9]*$"
 
 typedef NSArray *(^APArrayStringBlock)(NSString *);
 
