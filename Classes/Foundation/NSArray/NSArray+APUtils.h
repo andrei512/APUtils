@@ -21,6 +21,11 @@ typedef NSString *(^APStringStringBlock)(NSString *string);
 
 - (APStringStringBlock)join;
 
+#pragma mark - JSON
+
+- (NSString *)jsonString;
++ (NSArray *)arrayWithJSON:(NSString *)json;
+
 @end
 
 

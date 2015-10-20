@@ -56,6 +56,41 @@
     };
 }
 
+#pragma mark - JSON
+
+- (NSString *)jsonString {
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
+                                                       options:0
+                                                         error:&error];
+    
+    if (jsonData == nil) {
+#ifdef DEBUG
+        NSLog(@"fail to get JSON from array: %@, error: %@", self, error);
+#endif
+        return nil;
+    }
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    return jsonString;
+}
+
++ (NSArray *)arrayWithJSON:(NSString *)json {
+    NSError *error = nil;
+    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers | NSJSONReadingAllowFragments error:&error];
+    
+    if (error != nil) {
+#ifdef DEBUG
+        NSLog(@"fail to get dictioanry from JSON: %@, error: %@", json, error);
+#endif
+    }
+    
+    return jsonArray;
+}
+
 @end
 
 
