@@ -86,15 +86,15 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 
 // returns the N-th day from a week
 - (NSDate *)getWeekday:(int)weekdayNumber {
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     NSDateComponents *components = [cal components:
-                                    NSMonthCalendarUnit |
-                                    NSYearCalendarUnit |
-                                    NSWeekdayCalendarUnit |
-                                    NSYearForWeekOfYearCalendarUnit |
-                                    NSWeekOfYearCalendarUnit |
-                                    NSWeekCalendarUnit
+                                    NSCalendarUnitMonth |
+                                    NSCalendarUnitYear |
+                                    NSCalendarUnitWeekday |
+                                    NSCalendarUnitYearForWeekOfYear |
+                                    NSCalendarUnitWeekOfYear |
+                                    NSCalendarUnitWeekOfMonth
                                           fromDate:self];
     
     if (weekdayNumber > 7) {
@@ -111,9 +111,9 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 - (NSDate *)simpleDate {
     NSCalendar *cal = [NSCalendar currentCalendar];
     
-    NSDateComponents *components = [cal components:NSDayCalendarUnit |
-                                    NSMonthCalendarUnit |
-                                    NSYearCalendarUnit
+    NSDateComponents *components = [cal components:NSCalendarUnitDay |
+                                    NSCalendarUnitMonth |
+                                    NSCalendarUnitYear
                                           fromDate:self];
     
     return [cal dateFromComponents:components];
@@ -141,7 +141,7 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 - (NSUInteger) daysAgo
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSDayCalendarUnit)
+    NSDateComponents *components = [calendar components:(NSCalendarUnitDay)
                                                fromDate:self
                                                  toDate:[NSDate date]
                                                 options:0];
@@ -152,7 +152,7 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 - (NSUInteger) hoursAgo
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSHourCalendarUnit)
+    NSDateComponents *components = [calendar components:(NSCalendarUnitHour)
                                                fromDate:self
                                                  toDate:[NSDate date]
                                                 options:0];
@@ -193,7 +193,7 @@ const CGFloat A_DAY_IN_SECONDS = 60. * 60. * 24.;
 
 - (NSUInteger) weekday {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *weekdayComponents = [calendar components:(NSWeekdayCalendarUnit) fromDate:self];
+    NSDateComponents *weekdayComponents = [calendar components:(NSCalendarUnitWeekday) fromDate:self];
     
     return [weekdayComponents weekday];
 }
